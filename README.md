@@ -6,6 +6,11 @@ Conkey also contains a large amount of typographical symbols.
 
 For documentation, see [`Keys.md`](Keys.md).
 
+## Installation
+
+To install, go to the [latest release](https://github.com/bradrn/Conkey/releases/tag/v1.0.0) and download the file named `installer.zip`.
+Once this file has been downloaded, unzip it and run the file named `setup.exe`.
+
 ## Samples
 
 The following language samples were typed using only Conkey:
