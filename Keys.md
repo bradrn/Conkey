@@ -394,7 +394,7 @@ A wide range of arrows may be produced via the `G-/` dead key:
 | `i` | ↢ |
 
 (Althogh this dead key appears to be set up properly, it does not work correctly on my computer.
-If anyone else has the same problem, please (submit a new issue)[https://github.com/bradrn/Conkey/issues/new].)
+If anyone else has the same problem, please [submit a new issue](https://github.com/bradrn/Conkey/issues/new).)
 
 ### Haskell unicode symbols
 
@@ -442,7 +442,7 @@ Symbols for the Haskell language are accessed via the `G-]` dead key:
 | `}` | ⊇ |
 
 (Althogh this dead key appears to be set up properly, it does not work correctly on my computer.
-If anyone else has the same problem, please (submit a new issue)[https://github.com/bradrn/Conkey/issues/new].)
+If anyone else has the same problem, please [submit a new issue](https://github.com/bradrn/Conkey/issues/new).)
 
 ### Blackboard bold
 
@@ -473,4 +473,4 @@ Resulting symbol: ℂℂℕℕℚℚℝℝℤℤ
 > Note 3: This should be `M-s |`, but as mentioned previously GitHub can’t render the vertical bar in a table.
 
 (Althogh this dead key appears to be set up properly, it does not work correctly on my computer.
-If anyone else has the same problem, please (submit a new issue)[https://github.com/bradrn/Conkey/issues/new].)
+If anyone else has the same problem, please [submit a new issue](https://github.com/bradrn/Conkey/issues/new).)
