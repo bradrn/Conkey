@@ -10,19 +10,19 @@ For documentation, see [`Keys.md`](Keys.md).
 
 The following language samples were typed using only Conkey:
 
-> **Nuu-Chah-Nulth** ((source)[https://www.omniglot.com/writing/nuuchahnulth.htm]):
+> **Nuu-Chah-Nulth** ([source](https://www.omniglot.com/writing/nuuchahnulth.htm)):
 > ʔUyaaƛaḥ hawiiʔaƛii maapt̓ał c̓išaaʔatḥ ʔuukʷił yuułuʔiłʔatḥ ʔaḥʔaaʔaƛsi n̓ačuʔałʔaƛsi hiikʷis.
 >
-> **Khoekhoe** ((source)[https://www.omniglot.com/writing/khoekhoe.htm]):
+> **Khoekhoe** ([source](https://www.omniglot.com/writing/khoekhoe.htm)):
 > ǂKam !ũi-aob gye ǁẽib di gūna ǃhomi ǃna gye ǃũi hã i.
 >
-> **Azerbaijani** 1922 alphabet ((source)[https://www.omniglot.com/writing/azeri.htm]):
+> **Azerbaijani** 1922 alphabet ([source](https://www.omniglot.com/writing/azeri.htm)):
 > Butun insanlar ləƶaqət və huqyqlarьna gɵrə azad və bərabər doƣylyrlar.
 >
-> **Zhuang** 1957 alphabet ((source)[https://www.omniglot.com/writing/zhuang.htm]:
+> **Zhuang** 1957 alphabet ([source](https://www.omniglot.com/writing/zhuang.htm)):
 > Bouч bouч ma dəŋƨ laзƃɯn couƅ miƨ cɯyouƨ, cinƅyenƨ cəuƽ genƨli bouчbouч giŋƨdəŋз.
 >
-> **Polish** ((source)[https://en.wikipedia.org/wiki/Quotation_mark#Polish]):  
+> **Polish** ([source](https://en.wikipedia.org/wiki/Quotation_mark#Polish)):  
 > Mag skłonił się. […]  
 > — Jak siē nazywa ta wieś, panie? — zapytał przybysz. Kowal wzruszył ramionami.  
 > — Głupi Osioł.
