@@ -43,7 +43,7 @@ The following language samples were typed using only Conkey:
 > **Haskell**:
 > ```haskell
 > (∘) ∷ ∀ α β γ. (β → γ) → (α → β) → (α → γ)
-> f ∘ g = \x → g (f x)
+> g ∘ f = \x → g (f x)
 > ```
 
 (Yes, I know those last two aren’t strictly languages, but they’re good as a demonstration…)
