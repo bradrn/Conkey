@@ -316,6 +316,9 @@ Letter to type:    <>(),.
 Resulting symbol:  «»“”„‟
 ```
 
+Although they are not strictly guillemets, Conkey can also produce the chevrons ‘⟨’ and ‘⟩’.
+Use `G-S-, G-S-,` (`G-S-< G-S-<`) for the left chevron, and `G-S-. G-S-.` (`G-S-> G-S->`) for the right chevron.
+
 ### Dashes
 
 A variety of dashes may be produced using the `G--` dead key:
