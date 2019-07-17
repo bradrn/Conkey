@@ -13,6 +13,7 @@
 - [Hooks and bars](#hooks-and-bars)
 - [Letters](#letters)
   - [Misc. uncommon letters (including Zhuang tones)](#misc-uncommon-letters-including-zhuang-tones)
+  - [Superscripts](#superscripts)
   - [Greek letters](#greek-letters)
   - [Clicks](#clicks)
   - [Using unusual letters with diacritics](#using-unusual-letters-with-diacritics)
@@ -220,8 +221,6 @@ These letters may be accessed as follows:
 | `G-s h`         | ʃ                            | Yes      |
 | `G-t`           | þ                            | Yes      |
 | `G-u`           | ɯ                            | Yes      |
-| `G-w j`         | ʲ (superscript j)            | No       |
-| `G-w w`         | ʷ (superscript w)            | No       |
 | `G-x`           | ʔ (Unicase glottal stop)     | No       |
 | `G-X`           | ʻ (Hawaiian ʻokina)          | No       |
 | `G-y`           | ǝ (Latin letter turned E)    | Yes      |
@@ -258,6 +257,17 @@ Letter to type:    123456!@#$%^
 Resulting letter:  ɩƨзчƽƅƖƧЗЧƼƄ
 ```
 (Strictly speaking, the first letter is a Latin iota, not used in Zhuang, but due to the visual resemblance it is placed under the same dead key.)
+
+### Superscripts
+
+Many superscript letters may be accessed via the `G-w` dead key:
+```
+Letter to type:    ABDEGHIJKLMNOPRTUVWabcdefghijklmnoprstuvwxyz1234567890+-
+Resulting letter:  ᴬᴮᴰᴱᴳᴴᴵᴶᴷᴸᴹᴺᴼᴾᴿᵀᵁⱽᵂᵃᵇᶜᵈᵉᶠᵍʰⁱʲᵏˡᵐⁿᵒᵖʳˢᵗᵘᵛʷˣʸᶻ¹²³⁴⁵⁶⁷⁸⁹⁰⁺⁻
+```
+A superscript ‘ᶿ’ may also be obtained by typing `G-w G-j`.
+
+
 
 ### Greek letters
 
