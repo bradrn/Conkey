@@ -363,8 +363,8 @@ Resulting symbol:  ©℗®™℠
 Mathematical characters may be produced via the `G-2` dead key:
 
 ```
-Letter to type:    *x/%+'123sq
-Resulting symbol:  ××÷‰±′′″‴²√
+Letter to type:    *x/%+'123sqO0
+Resulting symbol:  ××÷‰±′′″‴²√∅∅
 ```
 
 (Note that the apostrophe-like characters listed are primes, not apostrophes.)
