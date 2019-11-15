@@ -211,6 +211,7 @@ These letters may be accessed as follows:
 | `G-k`           | ɔ                            | Yes      |
 | `G-l`           | Misc. letters (see below)    | Yes      |
 | `G-n`           | ŋ                            | Yes      |
+| `G-b`           | ꞑ                            | Yes      |
 | `G-o e`         | œ                            | Yes      |
 | `G-o u`         | ʊ (Latin letter upsilon)     | Yes      |
 | `G-o w`         | ꞷ (Latin letter omega)       | Yes      |
