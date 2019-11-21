@@ -206,6 +206,7 @@ These letters may be accessed as follows:
 | `G-e`           | ə (Latin letter schwa)       | Yes      |
 | `G-3`           | ɛ                            | Yes      |
 | `G-g`           | ɣ                            | Yes      |
+| `G-h`           | ꜧ                            | Yes      |
 | `G-i`           | ı (Dotless i)                | No       |
 | `G-j`           | Greek letters (see below)    | N/A      |
 | `G-k`           | ɔ                            | Yes      |
