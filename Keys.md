@@ -213,6 +213,7 @@ These letters may be accessed as follows:
 | `G-n`           | ŋ                            | Yes      |
 | `G-b`           | ꞑ                            | Yes      |
 | `G-o e`         | œ                            | Yes      |
+| `G-o o`         | ꝏ                            | Yes      |
 | `G-o u`         | ʊ (Latin letter upsilon)     | Yes      |
 | `G-o w`         | ꞷ (Latin letter omega)       | Yes      |
 | `G-p`           | Clicks (see below)           | No       |
