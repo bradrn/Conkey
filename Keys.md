@@ -359,7 +359,7 @@ Various different types of space may be produced using the `G-SPC` dead key (i.e
 | `1`              | Figure space                                            | U+2007     |
 | `.`              | Punctuation space                                       | U+2008     |
 | `,`              | Thin space                                              | U+2009     |
-| `|`              | Hair space                                              | U+200a     |
+| Vertical bar     | Hair space                                              | U+200a     |
 | `+`              | Medium mathematical space                               | U+205f     |
 | `!`              | Narrow no-break space                                   | U+202f     |
 | `0`              | Zero width space                                        | U+200b     |
