@@ -10,6 +10,7 @@
 - [Diacritics](#diacritics)
   - [Precomposed Characters](#precomposed-characters)
 - [Combining diacritics](#combining-diacritics)
+- [Modifier letters](#modifier-letters)
 - [Hooks and bars](#hooks-and-bars)
 - [Letters](#letters)
   - [Misc. uncommon letters (including Zhuang tones)](#misc-uncommon-letters-including-zhuang-tones)
@@ -142,16 +143,25 @@ These diacritics can be accessed via the `G-m` dead key:
 | S-, (S-<)                        | ◌̒ Combining turned comma above         |
 | .                                | ◌̔ Combining reversed comma above       |
 | S-. (S->)                        | ◌̕ Combining comma above right          |
-| '                                | ◌ʼ Modifier letter apostrophe          |
 | S-8 (S-\*)                       | ◌͘ Combining dot above right            |
 | \`                               | ◌̖ Combining grave accent below         |
 | S-\` (S-~)                       | ◌̗ Combining acute accent below         |
-| p                                | ◌ʹ Modifier letter prime               |
-| ]                                | ◌ˈ Modifier letter vertical line       |
 
 > Note 2: That is, the `|` character. But GitHub can’t render that properly in a table.
 
 For instance, typing `G-m |` gives the combining vertical line above.
+
+## Modifier letters
+
+Several modifier letters can also be accessed via the `G-m` dead key:
+
+| Character to type after dead key | Resulting diacritic              |
+|----------------------------------|----------------------------------|
+| '                                | ◌ʼ Modifier letter apostrophe    |
+| p                                | ◌ʹ Modifier letter prime         |
+| ]                                | ◌ˈ Modifier letter vertical line |
+
+(Some additional modifier letters can be found in the section on [superscripts](#superscripts).)
 
 ## Hooks and bars
 
