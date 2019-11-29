@@ -262,8 +262,8 @@ This refers to the method of typing the corresponding uppercase letter:
 
 Various uncommon letters can be accessed via the `G-l` dead key:
 ```
-Letter to type:    bBdDgGhHjJknNoOqQvVwWyYzZ
-Resulting letter:  ƃƂƌƋƣƢƕǶḫḪĸƞȠȣȢɋɊʌɅƿǷьЬȝȜ
+Letter to type:    bBdDgGhHjJknNoOqQvVwWyYzZ3#4$5%
+Resulting letter:  ƃƂƌƋƣƢƕǶḫḪĸƞȠȣȢɋɊʌɅƿǷьЬȝȜꜫꜪꜭꜬꜯꜮ
 ```
 (Note that `aA` also work, resulting in lower- and uppercase Egyptological Alef respectively. Not all fonts support these though.
 Note also that the result of typing `zZ` is yogh ȝȜ rather than ezh ʒƷ — they look identical in some fonts.)
