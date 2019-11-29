@@ -146,6 +146,8 @@ These diacritics can be accessed via the `G-m` dead key:
 | S-8 (S-\*)                       | ◌͘ Combining dot above right            |
 | \`                               | ◌̖ Combining grave accent below         |
 | S-\` (S-~)                       | ◌̗ Combining acute accent below         |
+| p                                | ◌ʹ Modifier letter prime               |
+| ]                                | ◌ˈ Modifier letter vertical line       |
 
 > Note 2: That is, the `|` character. But GitHub can’t render that properly in a table.
 
