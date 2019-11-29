@@ -20,6 +20,7 @@
 - [Typographical marks](#typographical-marks)
   - [Quotation marks and guillemets](#quotation-marks-and-guillemets)
   - [Dashes](#dashes)
+  - [Spaces](#spaces)
   - [Dots](#dots)
   - [IP Marks](#ip-marks)
   - [Mathematics](#mathematics)
@@ -341,6 +342,31 @@ A variety of dashes may be produced using the `G--` dead key:
 | `-`            | Hyphen        |
 | `n`            | En dash       |
 | `m`            | Em dash       |
+
+### Spaces
+
+Various different types of space may be produced using the `G-SPC` dead key (i.e. press the space bar and AltGr together):
+
+| Letter to type   | Space produced                                          | Code point |
+|------------------|---------------------------------------------------------|------------|
+| `t`              | Tab                                                     | U+0009     |
+| ` ` (i.e. space) | Non-breaking space                                      | U+00a0     |
+| `n`              | En space                                                | U+2002     |
+| `m`              | Em space                                                | U+2003     |
+| `b`              | Three-per-em space                                      | U+2004     |
+| `v`              | Four-per-em space                                       | U+2005     |
+| `c`              | Six-per-em space                                        | U+2006     |
+| `1`              | Figure space                                            | U+2007     |
+| `.`              | Punctuation space                                       | U+2008     |
+| `,`              | Thin space                                              | U+2009     |
+| `|`              | Hair space                                              | U+200a     |
+| `+`              | Medium mathematical space                               | U+205f     |
+| `!`              | Narrow no-break space                                   | U+202f     |
+| `0`              | Zero width space                                        | U+200b     |
+| `(`              | Zero width non-joiner                                   | U+200c     |
+| `)`              | Zero width joiner                                       | U+200d     |
+| `[`              | Open box `␣` (symbol for space)                         | U+2423     |
+| `]`              | Shouldered open box `⍽` (symbol for non-breaking space) | U+237d     |
 
 ### Dots
 
