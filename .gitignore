@@ -5,3 +5,6 @@ wow64/
 *.msi
 *.exe
 *~
+ms2mim/.stack-work/
+*.mim
+*_flymake.hs

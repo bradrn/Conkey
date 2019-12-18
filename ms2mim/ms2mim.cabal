@@ -1,0 +1,36 @@
+name:                ms2mim
+version:             0.1.0.0
+synopsis:            A utility to convert MSKLC keyboards to M17N keyboards.
+description:         A utility to convert MSKLC keyboards to M17N keyboards.
+homepage:            https://github.com/bradrn/Conkey
+license:             BSD3
+license-file:        ../LICENSE
+author:              Brad Neimann
+copyright:           2019 Brad Neimann
+category:            Conversion
+build-type:          Simple
+cabal-version:       >=1.10
+extra-source-files:  README.md
+
+library
+  ghc-options:         -Wall -O2
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+  exposed-modules:     MSKLC.Keyboard
+                     , MSKLC.Parser
+                     , M17N.Keyboard
+                     , M17N.Print
+                     , Convert.MS2MIM
+  build-depends:       base >= 4.7 && < 5
+                     , text
+                     , containers
+                     , megaparsec
+  
+executable ms2mim
+  ghc-options:         -Wall -O2
+  hs-source-dirs:      app
+  main-is:             Main.hs
+  default-language:    Haskell2010
+  build-depends:       base >= 4.7 && < 5
+                     , ms2mim
+                     , text
