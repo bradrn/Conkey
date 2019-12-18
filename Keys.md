@@ -415,6 +415,7 @@ Various typographic marks can be produced via the `G-S-2` (`G-@`) dead key:
 | `G-S-2 r` | ₹ |
 | `G-S-2 s` | ₪ |
 | `G-S-2 l` or `G-S-2 #` | £ |
+| `G-S-2 Y` | ¥ |
 
 (Note: in previous versions of Conkey, these were collectively produced by the `G-S-2`, `G-4` and `G-S-P` dead keys.
 For Conkey v2.0 those dead keys were merged.)
