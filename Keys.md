@@ -26,7 +26,7 @@
   - [IP Marks](#ip-marks)
   - [Currencies](#currencies)
   - [Arrows](#arrows)
-  - [Mathematics and related symbols](mathematics-and-related-symbols)
+  - [Mathematics and related symbols](#mathematics-and-related-symbols)
   - [Other symbols](#other-symbols)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
