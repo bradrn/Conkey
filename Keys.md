@@ -23,8 +23,7 @@
   - [Dashes](#dashes)
   - [Spaces](#spaces)
   - [Dots](#dots)
-  - [IP Marks](#ip-marks)
-  - [Currencies](#currencies)
+  - [Typographic marks (including IP Marks and currencies)](#typographic-marks-including-ip-marks-and-currencies)
   - [Arrows](#arrows)
   - [Mathematics and related symbols](#mathematics-and-related-symbols)
   - [Other symbols](#other-symbols)
@@ -390,22 +389,33 @@ Various dot-like characters may be produced using the `G-.` dead key:
 | `)`            | Bullet                |
 | `0`            | Degree sign           |
 
-### IP Marks
+### Typographic marks (including IP Marks and currencies)
 
-Marks designating Intellectual Property can be produced via the `G-S-p` (`G-S-P`) dead key:
-```
-Letter to type:    cprts
-Resulting symbol:  ©℗®™℠
-```
+Various typographic marks can be produced via the `G-S-2` (`G-@`) dead key:
 
-### Currencies
+| Letter to type | Symbol produced |
+|-|-|
+| `G-S-2 !` | ‽ |
+| `G-S-2 N` | № |
+| `G-S-2 1` | † |
+| `G-S-2 2` | ‡ |
+| `G-S-2 C` | © |
+| `G-S-2 P` | ℗ |
+| `G-S-2 R` | ® |
+| `G-S-2 S` | ℠ |
+| `G-S-2 T` | ™ |
+| `G-S-2 p` | ¶ |
+| `G-S-2 s` | § |
+| `G-S-2 o` | ¤ |
+| `G-S-2 C` | ¢ |
+| `G-S-2 c` | c |
+| `G-S-2 e` | € |
+| `G-S-2 r` | ₹ |
+| `G-S-2 s` | ₪ |
+| `G-S-2 l` or `G-S-2 #` | £ |
 
-Selected currencies may be produced via the `G-4` dead key:
-
-```
-Letter to type:    oCcersl
-Resulting symbol:  ¤¢c€₹₪£
-```
+(Note: in previous versions of Conkey, these were collectively produced by the `G-S-2`, `G-4` and `G-S-P` dead keys.
+For Conkey v2.0 those dead keys were merged.)
 
 ### Arrows
 
@@ -505,13 +515,4 @@ For Conkey v2.0 those dead keys were merged.)
 | `G-o .`               | ◌ (Diacritic carrier)     |
 | `M-S-; :` (`M-S-: :`) | ꞉ (Modifier letter colon) |
 | `M-S-; ;` (`M-S-: ;`) | ː (IPA triangular colon)  |
-| `M-s p`               | ¶                         |
-| (see note 3 below)    | §                         |
-| `G-S-2 ?` (`G-S-@` ?) | ‽                         |
-| `G-S-2 !` (`G-S-@` !) | ‽                         |
-| `G-S-2 N` (`G-S-@` N) | №                         |
-| `G-S-2 1` (`G-S-@` 1) | †                         |
-| `G-S-2 2` (`G-S-@` 2) | ‡                         |
-
-> Note 3: This should be `M-s |`, but as mentioned previously GitHub can’t render the vertical bar in a table.
 
