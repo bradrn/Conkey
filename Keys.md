@@ -24,11 +24,9 @@
   - [Spaces](#spaces)
   - [Dots](#dots)
   - [IP Marks](#ip-marks)
-  - [Mathematics](#mathematics)
   - [Currencies](#currencies)
   - [Arrows](#arrows)
-  - [Haskell unicode symbols](#haskell-unicode-symbols)
-  - [Blackboard bold](#blackboard-bold)
+  - [Mathematics and related symbols](mathematics-and-related-symbols)
   - [Other symbols](#other-symbols)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -400,17 +398,6 @@ Letter to type:    cprts
 Resulting symbol:  ©℗®™℠
 ```
 
-### Mathematics
-
-Mathematical characters may be produced via the `G-2` dead key:
-
-```
-Letter to type:    *x/%+'123sqO0
-Resulting symbol:  ××÷‰±′′″‴²√∅∅
-```
-
-(Note that the apostrophe-like characters listed are primes, not apostrophes.)
-
 ### Currencies
 
 Selected currencies may be produced via the `G-4` dead key:
@@ -448,12 +435,22 @@ A wide range of arrows may be produced via the `G-/` dead key:
 | `i` | ↢ |
 
 
-### Haskell unicode symbols
+### Mathematics and related symbols
 
-Symbols for the Haskell language are accessed via the `G-]` dead key:
-
+Many mathematical symbols, as well as symbols relating to the Haskell language, and blackboard bold letters,
+  can be produced via the `G-=` dead key:
+  
 | Character to type | Resulting symbol |
 |-|-|
+| `x` | × |
+| `/` | ÷ |
+| `%` | ‰ |
+| `-` | ± |
+| `1` | ′ (prime) |
+| `2` | ″ (double prime) |
+| `3` | ‴ (triple prime) |
+| `s` | √ |
+| `0` | ∅ (empty set) |
 | `~` | ¬ |
 | `:` | ∷ |
 | `*` | ★ |
@@ -462,46 +459,42 @@ Symbols for the Haskell language are accessed via the `G-]` dead key:
 | `)` | ⦈ |
 | `[` | ⟦ |
 | `]` | ⟧ |
-| `l` | ≫ |
-| `k` | ≪ |
-| `%` | ⊛ |
-| `n` | ∅ |
-| `o` | ⋙ |
-| `i` | ⋘ |
+| `f` | ≫ |
+| `d` | ≪ |
+| `@` | ⊛ |
+| `h` | ⋙ |
+| `g` | ⋘ |
 | `8` | ⁂ |
-| `_` | ⧻ |
+| `#` | ⧻ |
 | `|` | ⫴ |
 | `.` | ∘ |
 | `^` | ∧ |
 | `v` | ∨ |
-| `e` | ε |
 | `=` | ≡ |
-| `/` | ≠ |
-| `?` | ≢ |
+| `!` | ≠ |
+| `¡` | ≢ |
 | `<` | ≤ |
 | `>` | ≥ |
-| `x` | ⋅ |
+| `'` | ⋅ |
 | `+` | ⧺ |
-| `E` | ∈ |
-| `#` | ∉ |
-| `!` | ‼ |
+| `e` | ∈ |
+| `E` | ∉ |
+| `i` | ‼ |
 | `b` | ⊥ |
 | `U` | ∪ |
 | `I` | ∩ |
-| `&` | ⊕ |
-| `\` | ∖ |
+| `a` | ⊕ |
+| `\` | ∖ (set difference) |
 | `{` | ⊆ |
 | `}` | ⊇ |
+| `C` | ℂ |
+| `N` | ℕ |
+| `Q` | ℚ |
+| `R` | ℝ |
+| `Z` | ℤ |
 
-
-### Blackboard bold
-
-Blackboard bold characters can be typed using the `G-v` key:
-
-```
-Letter to type:   cCnNqQrRzZ
-Resulting symbol: ℂℂℕℕℚℚℝℝℤℤ
-```
+(Note: in previous versions of Conkey, these were collectively produced by the `G-v`, `G-2` and `G-]` dead keys.
+For Conkey v2.0 those dead keys were merged.)
 
 ### Other symbols
 
