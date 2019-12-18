@@ -157,6 +157,8 @@ Several modifier letters can also be accessed via the `G-m` dead key:
 | '                                | ◌ʼ Modifier letter apostrophe    |
 | p                                | ◌ʹ Modifier letter prime         |
 | ]                                | ◌ˈ Modifier letter vertical line |
+| `M-S-; :` (`M-S-: :`)            | ◌꞉ (Modifier letter colon)       |
+| `M-S-; ;` (`M-S-: ;`)            | ◌ː (IPA triangular colon)        |
 
 (Some additional modifier letters can be found in the section on [superscripts](#superscripts).)
 
@@ -513,6 +515,4 @@ For Conkey v2.0 those dead keys were merged.)
 | `G-S-1` (`G-S-!`)     | ¡                         |
 | `G-S-/` (`G-S-?`)     | ¿                         |
 | `G-o .`               | ◌ (Diacritic carrier)     |
-| `M-S-; :` (`M-S-: :`) | ꞉ (Modifier letter colon) |
-| `M-S-; ;` (`M-S-: ;`) | ː (IPA triangular colon)  |
 
