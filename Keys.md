@@ -106,7 +106,7 @@ The columns have the following meanings:
 | G-S-' (G-S-")  | ◌̈ Diaeresis/umlaut    | `aAeEhHiIoOtuUwWxXyY`                      | U+00a8               |
 | G-0            | ◌̉ Hook above          | `aAeEiIoOuUyY`                             | U+0309               |
 | G-8            | ◌̊ Ring above          | `aAuUwy`                                   | U+02da               |
-| G-;            | ◌̋ Double acute accent | `oOuU`                                     | U+02dd               |
+| G-S-; (G-S-:)  | ◌̋ Double acute accent | `oOuU`                                     | U+02dd               |
 | G-5            | ◌̌ Caron               | `aAcCdDeEgGhHiIjJkKlLnNoOrRsStTuUzZʒƷ`     | U+02c7               |
 | G-S-0 (G-S-))  | ◌̛ Horn                | `oOuU`                                     | U+031b               |
 | G-.            | ◌̣ Dot below           | `aAbBdDeEhHiIkKlLmMnNoOrRsStTuUvVwWyYzZ`   | U+0323               |
