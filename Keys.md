@@ -212,11 +212,11 @@ These letters may be accessed as follows:
 
 | Key combination | Resulting letter             | Capital? |
 |-----------------|------------------------------|----------|
-| `G-a a`         | ɑ (Latin letter alpha)       | Yes      |
-| `G-a e`         | æ                            | Yes      |
+| `G-a`           | æ                            | Yes      |
 | `G-c`           | ꞌ (Saltillo)                 | Yes      |
 | `G-e`           | ə (Latin letter schwa)       | Yes      |
-| `G-r`           | ɛ                            | Yes      |
+| `G-d`           | ʃ                            | Yes      |
+| `G-f`           | ſ                            | No       |
 | `G-g`           | ɣ                            | Yes      |
 | `G-h`           | ꜧ                            | Yes      |
 | `G-i`           | ı (Dotless i)                | No       |
@@ -231,11 +231,11 @@ These letters may be accessed as follows:
 | `G-o w`         | ꞷ (Latin letter omega)       | Yes      |
 | `G-p`           | Clicks (see below)           | No       |
 | `G-q`           | ɂ (Non-unicase glottal stop) | Yes      |
-| `G-s f`         | ſ                            | No       |
-| `G-s s`         | ß                            | Yes      |
-| `G-s h`         | ʃ                            | Yes      |
+| `G-r`           | ɛ                            | Yes      |
+| `G-s`           | ß                            | Yes      |
 | `G-t`           | þ                            | Yes      |
 | `G-u`           | ɯ                            | Yes      |
+| `G-v`           | ʌ                            | Yes      |
 | `G-x`           | ʔ (Unicase glottal stop)     | No       |
 | `G-X`           | ʻ (Hawaiian ʻokina)          | No       |
 | `G-y`           | ǝ (Latin letter turned E)    | Yes      |
@@ -261,11 +261,10 @@ This refers to the method of typing the corresponding uppercase letter:
 
 Various uncommon letters can be accessed via the `G-l` dead key:
 ```
-Letter to type:    bBdDgGhHjJknNoOqQvVwWxXyYzZ3#4$5%
-Resulting letter:  ƃƂƌƋƣƢƕǶḫḪĸƞȠȣȢɋɊʌɅƿǷḫḪьЬȝȜꜫꜪꜭꜬꜯꜮ
+Letter to type:    aAbBdDgGhHjJknNoOqQwWxXyYzZɛƐ'"3#4$5%
+Resulting letter:  ɑⱭƃƂƌƋƣƢƕǶḫḪĸƞȠȣȢɋɊƿǷḫḪьЬȝȜꜥꜤꜣꜢꜫꜪꜭꜬꜯꜮ
 ```
-(Note that `aA` also work, resulting in lower- and uppercase Egyptological Alef respectively. Not all fonts support these though.
-Note also that the result of typing `zZ` is yogh ȝȜ rather than ezh ʒƷ — they look identical in some fonts.)
+(Note that the result of typing `zZ` is yogh ȝȜ rather than ezh ʒƷ — they look identical in some fonts.)
 
 Zhuang tone letters can be accessed as well via the `G-1` dead key:
 ```
