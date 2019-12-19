@@ -216,7 +216,7 @@ These letters may be accessed as follows:
 | `G-a e`         | æ                            | Yes      |
 | `G-c`           | ꞌ (Saltillo)                 | Yes      |
 | `G-e`           | ə (Latin letter schwa)       | Yes      |
-| `G-3`           | ɛ                            | Yes      |
+| `G-r`           | ɛ                            | Yes      |
 | `G-g`           | ɣ                            | Yes      |
 | `G-h`           | ꜧ                            | Yes      |
 | `G-i`           | ı (Dotless i)                | No       |
@@ -224,7 +224,7 @@ These letters may be accessed as follows:
 | `G-k`           | ɔ                            | Yes      |
 | `G-l`           | Misc. letters (see below)    | Yes      |
 | `G-n`           | ŋ                            | Yes      |
-| `G-b`           | ꞑ                            | Yes      |
+| `G-m`           | ꞑ                            | Yes      |
 | `G-o e`         | œ                            | Yes      |
 | `G-o o`         | ꝏ                            | Yes      |
 | `G-o u`         | ʊ (Latin letter upsilon)     | Yes      |
