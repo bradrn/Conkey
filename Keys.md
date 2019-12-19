@@ -390,6 +390,7 @@ Various dot-like characters may be produced using the `G-.` dead key:
 | Vertical bar   | Interpunct/middle dot |
 | `)`            | Bullet                |
 | `0`            | Degree sign           |
+| `@`            | Diacritic carrier (◌) |
 
 ### Typographic marks (including IP Marks and currencies)
 
@@ -515,5 +516,4 @@ For Conkey v2.0 those dead keys were merged.)
 |-----------------------|---------------------------|
 | `G-S-1` (`G-S-!`)     | ¡                         |
 | `G-S-/` (`G-S-?`)     | ¿                         |
-| `G-o .`               | ◌ (Diacritic carrier)     |
 
