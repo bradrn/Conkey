@@ -4,12 +4,7 @@ Conkey is a Windows keyboard layout aimed at conlangers.
 As such, it focuses extensively on unusual diacritics and letters, aiming to cover more of these than any other keyboard.
 Conkey also contains a large amount of typographical symbols.
 
-For documentation, see [`Keys.md`](Keys.md).
-
-## Installation
-
-To install, go to the [latest release](https://github.com/bradrn/Conkey/releases/tag/v1.0.0) and download the file named `installer.zip`.
-Once this file has been downloaded, unzip it and run the file named `setup.exe`.
+For documentation, see `doc.pdf`, from the [latest release](https://github.com/bradrn/Conkey/releases/latest).
 
 ## Samples
 
