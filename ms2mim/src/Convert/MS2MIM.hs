@@ -41,10 +41,8 @@ getRules = concatMap (\(vk, assign) -> Map.assocs assign >>= getRule vk) . Map.a
     getRule vk (ss, MS.DeadKey (MS.DeadKeyDesc base mapping)) = case composeFromVk ss vk of
         Nothing -> []
         Just keyname ->
-            let baseRule = Mim.Rule (Mim.KeySeq [Left keyname]) [Mim.ActInsert $ Mim.InsInt $ ord base]
-                mapRules = flip fmap (Map.assocs mapping) $ \(i, o) ->
-                    Mim.Rule (Mim.KeySeq [Left keyname, Right $ ord i]) [Mim.ActInsert $ Mim.InsInt $ ord o]
-            in baseRule : mapRules
+            flip fmap (Map.assocs mapping) $ \(i, o) ->
+                Mim.Rule (Mim.KeySeq [Left keyname, Right $ ord i]) [Mim.ActInsert $ Mim.InsInt $ ord o]
     
 composeFromVk :: MS.ShiftState -> MS.VkCode -> Maybe Mim.Symbol
 composeFromVk ss vk =
