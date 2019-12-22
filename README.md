@@ -67,4 +67,23 @@ Conkey uses the [Microsoft Keyboard Layout Creator](https://support.microsoft.co
 This is highly recommended for any complex work on Conkey.
 However, if you want to make simple modifications only, the [keyboard layout description file](Conkey.klc) has a fairly simple plaintext format which can easily be modified.
 
-A Mac or Linux version is not planned; however, anyone interested is welcome to try porting Conkey to those platforms.
+A Mac ~~or Linux version~~ is not planned; however, anyone interested is welcome to try porting Conkey to those platforms.  
+**There is now a Linux version!** Build it using the instructions below.
+
+## Building
+
+### Linux
+
+Conkey is developed on Windows, using the Microsoft Keyboard Layout Creator (MSKLC).
+However, this repository contains a Haskell program `ms2mim`,
+  which converts a MSKLC file to a `.mim` file for use with M17N.
+The [Haskell Stack](https://docs.haskellstack.org/en/stable/README/) is recommended for building this program.
+Use the following commands:
+
+```
+$ cd ms2mim
+$ stack build
+$ stack exec -- ms2mim ../Conkey.klc ../latn-conk.mim
+```
+
+This should generate a file `latn-conk.mim` for use in Linux.
