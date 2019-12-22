@@ -72,9 +72,16 @@ A Mac ~~or Linux version~~ is not planned; however, anyone interested is welcome
 
 ## Building
 
+### Windows
+
+Conkey uses MSKLC for development, as mentioned above.
+To build the keyboard, use the `Project → Build DLL and Setup Package` menu item.
+(Note that I find I have to uninstall Conkey before I can run this, since otherwise I get an error.)
+This should create a `setup.exe` executable plus a number of other files.
+
 ### Linux
 
-Conkey is developed on Windows, using the Microsoft Keyboard Layout Creator (MSKLC).
+As mentioned above, Conkey is developed on Windows, using MSKLC.
 However, this repository contains a Haskell program `ms2mim`,
   which converts a MSKLC file to a `.mim` file for use with M17N.
 The [Haskell Stack](https://docs.haskellstack.org/en/stable/README/) is recommended for building this program.
