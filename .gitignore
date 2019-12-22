@@ -8,3 +8,12 @@ wow64/
 ms2mim/.stack-work/
 *.mim
 *_flymake.hs
+auto/
+*.aux
+*.log
+*.lot
+*.out
+*.pdf
+*.synctex.gz
+*.toc
+#*#
