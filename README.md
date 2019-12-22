@@ -70,6 +70,33 @@ However, if you want to make simple modifications only, the [keyboard layout des
 A Mac ~~or Linux version~~ is not planned; however, anyone interested is welcome to try porting Conkey to those platforms.  
 **There is now a Linux version!** Build it using the instructions below.
 
+## Installation
+
+Install Conkey using the files from the [latest release](https://github.com/bradrn/Conkey/releases/latest).
+Alternately, get the files by [building Conkey yourself](#building).
+
+## Windows
+
+Install by unzipping `installer.zip` and running the `setup.exe` file within.
+If you already have a previous version of Conkey installed,
+  it may be a good idea to uninstall that first using the Control Panel.
+
+## Linux
+
+(Special thanks go to all the members of the [ZBB board](https://www.verduria.org/) for all their help in getting the Ubuntu version to work!
+I don’t think I could have ported Conkey to Ubuntu without your help.)
+
+Conkey for Linux is distributed as a `.mim` file, for use with the M17N library.
+It has been tested with Ubuntu and IBus, but should work on other systems as well.
+
+The following installation instructions have been tested with Ubuntu:
+
+1. Run `sudo apt install ibus-m17n` to install IBus and M17N.
+2. Make a new directory `~/.m17n.d` with `mkdir ~/.m17n.d`, if it does not already exist.
+3. Download `latn-conk.mim` from the releases page, and copy it to `~/.m17n.d`.
+4. Run `ibus restart`.
+5. The new Conkey keyboard should now be available from the Settings page (under the `Other` language).
+
 ## Building
 
 ### Windows
