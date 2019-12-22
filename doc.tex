@@ -1,14 +1,14 @@
 \documentclass[oneside]{memoir}
 
 \usepackage{fontspec}
+% Default font
 \setmainfont{Gentium Plus}
-% \setmainfont{Times New Roman}
-% \setmainfont{Junicode}
+% Fallback font for characters unavailable in Gentium
 \newfontfamily{\fallbackfont}{Times New Roman}
 \DeclareTextFontCommand{\tfb}{\fallbackfont}
+% Fallback font for symbols
 \newfontfamily{\fallbackfontsymbol}{Segoe UI Symbol}
 \DeclareTextFontCommand{\tfbs}{\fallbackfontsymbol}
-% \newcommand{\tfb}[1]{#1}
 \usepackage{microtype}
 \usepackage{makecell}
 \renewcommand\cellalign{tl}
@@ -16,11 +16,17 @@
 \usepackage{xcolor}
 
 \usepackage{cprotect}
+% Formatting for keys
 \newcommand{\key}{\verb}
+% Formatting for keys, when \verb is not available
 \newcommand{\keynv}{\texttt}
+% Formatting for characters produced by Conkey
 \newcommand{\out}[1]{\colorbox{gray!20}{\strut{}#1}}
+% Formatting for Unicode codepoint
 \newcommand{\uni}[1]{\texttt{#1}}
 \makeatletter
+% \ins{lowercase}{uppercase} gives a list of inputs to a dead key
+% \ins*{lower}{upper} formats them in two lines instead of one
 \def\ins{\@ifstar\@ins\@@ins}
 \newcommand{\@ins}[2]{\keynv{#1}\quad\keynv{#2}}
 \newcommand{\@@ins}[2]{\makecell{\keynv{#1}\\\keynv{#2}}}
