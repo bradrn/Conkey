@@ -6,6 +6,8 @@ Conkey also contains a large amount of typographical symbols.
 
 For documentation, see `doc.pdf`, from the [latest release](https://github.com/bradrn/Conkey/releases/latest).
 
+For intallation instructions, see https://github.com/bradrn/Conkey#installation.
+
 ## Samples
 
 The following language samples were typed using only Conkey:
