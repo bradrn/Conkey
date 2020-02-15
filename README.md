@@ -1,6 +1,6 @@
 # Conkey
 
-Conkey is a Windows keyboard layout aimed at conlangers.
+Conkey is a keyboard layout aimed at conlangers.
 As such, it focuses extensively on unusual diacritics and letters, aiming to cover more of these than any other keyboard.
 Conkey also contains a large amount of typographical symbols.
 
