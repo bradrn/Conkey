@@ -279,6 +279,24 @@ Examples include the \textsc{IPA} length symbol, or the apostrophe used to indic
   these both modify a base letter, but are placed after the base like a standalone puncuation character.
 Modifier letters can also be typed using the \key|G-]| dead key, using the mappings in Table~\ref{tab:misc_diacritics_mappings}.
 
+\subsection{Diacritics spanning two letters}
+\label{sec:diacritics_spanning_two_letters}
+
+Certain diacritics span two letters rather than one --- for example, the tie used for \textsc{ipa} diphthongs such as \out{a͡i}, or the line above the Menominee grapheme \out{a͞e}.
+Such diacritics can be typed using the dead key \key|G-2|:
+
+\begin{itemize}[noitemsep]
+\item \key|G-2 G-9| yields the double inverted breve below \out{◌͜◌}
+\item \key|G-2 G-0| yields the double inverted breve above \out{◌͝◌}
+\item \key|G-2 G--| yields the double macron above \out{◌͞◌}
+\item \key|G-2 S--| yields the double macron below \out{◌͟◌}
+\item \key|G-2 S-`| yields the double tilde above \out{◌͠◌}
+\item \key|G-2 G-6| yields the double tie above \out{◌͡◌}
+\end{itemize}
+
+These diacritics must be typed between the two individual letters they span;
+  for instance, \out{a͞e} is typed as \key|a G-2 G-- e|.
+
 \subsection{Letters containing diacritics (hooks and bars)}
 \label{sec:letters_containing_diacritics}
 
