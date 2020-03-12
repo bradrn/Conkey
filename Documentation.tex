@@ -15,6 +15,9 @@
 \usepackage{enumitem}
 \usepackage{xcolor}
 
+\usepackage{wrapfig}
+\setlength\columnsep{20pt}
+
 \usepackage{cprotect}
 % Formatting for keys
 \newcommand{\key}{\verb}
@@ -172,7 +175,75 @@ Outside tables, the following formatting conventions are used:
 \subsection{Diacritics with precomposed characters}
 \label{sec:diacritics_with_precomposed_characters}
 
-\begin{table}
+\begin{wraptable}[23]{r}{5cm}
+\centering
+\cprotect\caption{Combining diacritics: mappings for \key|G-]| dead key}
+\label{tab:misc_diacritics_mappings}
+\begin{tabular}{ll}
+\toprule
+Input & Result \\
+\midrule
+\key|S-\| & Vertical line above ◌̍ \\
+\key|\|   & Vertical line below ◌̩ \\
+\key|S-'| & Double vertical line above ◌̎ \\
+\key|,|   & Comma above ◌̓ \\
+\key|S-,| & Turned comma above ◌̒ \\
+\key|.|   & Reversed comma above  ◌̔ \\
+\key|S-.| & Comma above right ◌̕ \\
+\key|S-8| & Dot above right ◌͘ \\
+\key|`|   & Grave below ◌̖ \\
+\key|S-`| & Acute below ◌̗ \\
+\midrule
+\key|'| & Modifier apostrophe ◌ʼ \\
+\key|p| & Modifier prime ◌ʹ \\
+\key|]| & Modifier vertical line ◌ˈ \\
+\key|:| & Modifier colon ◌꞉ \\
+\key|;| & \makecell{Modifier triangular colon ◌ː\\(i.e.\ \textsc{ipa} length symbol)} \\
+\key|G-.| & \makecell{Sinological dot \tfb{◌ꞏ}\\(commonly used as half-colon\\length symbol)} \\
+\bottomrule
+\end{tabular}
+\end{wraptable}
+
+The main mechanism for entering diacritics in Conkey is a number of dead keys,
+  enumerated in Table~\ref{tab:dk_for_diacritics}.
+These dead keys are used for entering diacritics which have precomposed base+diacritic pairs in Unicode.
+Each column of the table contains information about the dead key on that row:
+\begin{itemize}
+\item `Diacritic' shows the name of the diacritic, as well as a representation of the diacritic itself.
+\item `Dead key' shows the location of the dead key on the keyboard.
+\item `Acceptable inputs' contains a list of input letters which can be used with this dead key.
+  For clarity, every list of inputs in this column has been separated into lower- and uppercase letters (sometimes on two lines).
+
+  This column is present because not all letters can be used with every diacritic,
+    as Unicode does not contain precomposed characters for every base+diacritic combination.
+  For instance, \out{a̋} cannot be typed using \key|G-S-; a|, since that particular combination is not in Unicode.
+\item `Notes' contains any other information which may be relevant to that dead key.
+\end{itemize}
+For instance, the row for the `ring above' diacritic states that this diacritic is accessed via \key|G-8|,
+  and that the available combinations are \key|G-8 a|, \key|G-8 u|, \key|G-8 w|, \key|G-8 y|, \key|G-8 A| and \key|G-8 U|
+  (which produce \out{å}, \out{ů}, \out{ẘ}, \out{ẙ}, \out{Å}, \out{Ů} respectively).
+
+Additionally, every one of the above dead keys can be used to insert the appropriate combining diacritic,
+  for use in situations where there is no precomposed character.
+This can be produced by typing space (here denoted \key|SPC|) after the dead key.
+For instance, although there is no precomposed Unicode character for \out{a̋},
+  this may still be typed by first typing \key|a|, and then typing \key|G-S-; SPC| to produce the combining double acute accent.
+
+
+\subsection{Combining diacritics and modifier letters}
+\label{sec:combining_diacritics}
+
+In addition to diacritics which come with precomposed characters, Unicode includes many diacritics which exist only as combining diacritics,
+  without any corresponding precomposed characters.
+These diacritics can be typed using the \key|G-]| dead key, with mappings as shown in Table~\ref{tab:misc_diacritics_mappings}.
+
+Unicode also includes some \textit{modifier letters}.
+These are diacritic-like characters which are placed after the base letter rather than above or below it.
+Examples include the \textsc{IPA} length symbol, or the apostrophe used to indicate ejectives;
+  these both modify a base letter, but are placed after the base like a standalone puncuation character.
+Modifier letters can also be typed using the \key|G-]| dead key, using the mappings in Table~\ref{tab:misc_diacritics_mappings}.
+
+\begin{table}[!h]
 \centerfloat
 \caption{Dead keys for diacritics}
 \label{tab:dk_for_diacritics}
@@ -210,97 +281,9 @@ Cedilla ◌̧          & \key|G-S-,| & \ins{cdeghklnrst}{CDEGHKLNRST}           
 \bottomrule
 \end{tabularx}
 \end{table}
+\clearpage % to be extra sure this float gets output right at this point
 
-The main mechanism for entering diacritics in Conkey is a number of dead keys,
-  enumerated in Table~\ref{tab:dk_for_diacritics}.
-These dead keys are used for entering diacritics which have precomposed base+diacritic pairs in Unicode.
-Each column of the table contains information about the dead key on that row:
-\begin{itemize}
-\item `Diacritic' shows the name of the diacritic, as well as a representation of the diacritic itself.
-\item `Dead key' shows the location of the dead key on the keyboard.
-\item `Acceptable inputs' contains a list of input letters which can be used with this dead key.
-  For clarity, every list of inputs in this column has been separated into lower- and uppercase letters (sometimes on two lines).
-
-  This column is present because not all letters can be used with every diacritic,
-    as Unicode does not contain precomposed characters for every base+diacritic combination.
-  For instance, \out{a̋} cannot be typed using \key|G-S-; a|, since that particular combination is not in Unicode.
-\item `Notes' contains any other information which may be relevant to that dead key.
-\end{itemize}
-For instance, the row for the `ring above' diacritic states that this diacritic is accessed via \key|G-8|,
-  and that the available combinations are \key|G-8 a|, \key|G-8 u|, \key|G-8 w|, \key|G-8 y|, \key|G-8 A| and \key|G-8 U|
-  (which produce \out{å}, \out{ů}, \out{ẘ}, \out{ẙ}, \out{Å}, \out{Ů} respectively).
-
-Additionally, every one of the above dead keys can be used to insert the appropriate combining diacritic,
-  for use in situations where there is no precomposed character.
-This can be produced by typing space (here denoted \key|SPC|) after the dead key.
-For instance, although there is no precomposed Unicode character for \out{a̋},
-  this may still be typed by first typing \key|a|, and then typing \key|G-S-; SPC| to produce the combining double acute accent.
-
-
-\subsection{Combining diacritics and modifier letters}
-\label{sec:combining_diacritics}
-
-\begin{table}
-\centering
-\cprotect\caption{Combining diacritics: mappings for \key|G-]| dead key}
-\label{tab:misc_diacritics_mappings}
-\begin{tabular}{ll}
-\toprule
-Input & Result \\
-\midrule
-\key|S-\| & Vertical line above ◌̍ \\
-\key|\|   & Vertical line below ◌̩ \\
-\key|S-'| & Double vertical line above ◌̎ \\
-\key|,|   & Comma above ◌̓ \\
-\key|S-,| & Turned comma above ◌̒ \\
-\key|.|   & Reversed comma above  ◌̔ \\
-\key|S-.| & Comma above right ◌̕ \\
-\key|S-8| & Dot above right ◌͘ \\
-\key|`|   & Grave below ◌̖ \\
-\key|S-`| & Acute below ◌̗ \\
-\midrule
-\key|'| & Modifier apostrophe ◌ʼ \\
-\key|p| & Modifier prime ◌ʹ \\
-\key|]| & Modifier vertical line ◌ˈ \\
-\key|:| & Modifier colon ◌꞉ \\
-\key|;| & \makecell{Modifier triangular colon ◌ː\\(i.e.\ \textsc{ipa} length symbol)} \\
-\key|G-.| & \makecell{Sinological dot \tfb{◌ꞏ}\\(commonly used as half-colon length symbol)} \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-In addition to diacritics which come with precomposed characters, Unicode includes many diacritics which exist only as combining diacritics,
-  without any corresponding precomposed characters.
-These diacritics can be typed using the \key|G-]| dead key, with mappings as shown in Table~\ref{tab:misc_diacritics_mappings}.
-
-Unicode also includes some \textit{modifier letters}.
-These are diacritic-like characters which are placed after the base letter rather than above or below it.
-Examples include the \textsc{IPA} length symbol, or the apostrophe used to indicate ejectives;
-  these both modify a base letter, but are placed after the base like a standalone puncuation character.
-Modifier letters can also be typed using the \key|G-]| dead key, using the mappings in Table~\ref{tab:misc_diacritics_mappings}.
-
-\subsection{Diacritics spanning two letters}
-\label{sec:diacritics_spanning_two_letters}
-
-Certain diacritics span two letters rather than one --- for example, the tie used for \textsc{ipa} diphthongs such as \out{a͡i}, or the line above the Menominee grapheme \out{a͞e}.
-Such diacritics can be typed using the dead key \key|G-2|:
-
-\begin{itemize}[noitemsep]
-\item \key|G-2 G-9| yields the double inverted breve below \out{◌͜◌}
-\item \key|G-2 G-0| yields the double inverted breve above \out{◌͝◌}
-\item \key|G-2 G--| yields the double macron above \out{◌͞◌}
-\item \key|G-2 S--| yields the double macron below \out{◌͟◌}
-\item \key|G-2 S-`| yields the double tilde above \out{◌͠◌}
-\item \key|G-2 G-6| yields the double tie above \out{◌͡◌}
-\end{itemize}
-
-These diacritics must be typed between the two individual letters they span;
-  for instance, \out{a͞e} is typed as \key|a G-2 G-- e|.
-
-\subsection{Letters containing diacritics (hooks and bars)}
-\label{sec:letters_containing_diacritics}
-
-\begin{table}
+\begin{table}[!b]
 \centerfloat
 \begin{minipage}{0.16\paperwidth}
 \centering
@@ -382,6 +365,27 @@ Input
 \end{tabular}
 \end{minipage}
 \end{table}
+
+\subsection{Diacritics spanning two letters}
+\label{sec:diacritics_spanning_two_letters}
+
+Certain diacritics span two letters rather than one --- for example, the tie used for \textsc{ipa} diphthongs such as \out{a͡i}, or the line above the Menominee grapheme \out{a͞e}.
+Such diacritics can be typed using the dead key \key|G-2|:
+
+\begin{itemize}[noitemsep]
+\item \key|G-2 G-9| yields the double inverted breve below \out{◌͜◌}
+\item \key|G-2 G-0| yields the double inverted breve above \out{◌͝◌}
+\item \key|G-2 G--| yields the double macron above \out{◌͞◌}
+\item \key|G-2 S--| yields the double macron below \out{◌͟◌}
+\item \key|G-2 S-`| yields the double tilde above \out{◌͠◌}
+\item \key|G-2 G-6| yields the double tie above \out{◌͡◌}
+\end{itemize}
+
+These diacritics must be typed between the two individual letters they span;
+  for instance, \out{a͞e} is typed as \key|a G-2 G-- e|.
+
+\subsection{Letters containing diacritics (hooks and bars)}
+\label{sec:letters_containing_diacritics}
 
 Certain letters are treated in Conkey as if they contain a diacritic,
   despite the fact that the `diacritic' is joined to the base letter and does not have a fixed location.
@@ -503,10 +507,12 @@ For convenience, there are several ways of producing each click letter:
 \subsection{Greek letters}
 \label{sec:greek_letters}
 
-\begin{table}
-\centering
+\begin{table}[b]
+\centerfloat
+\begin{minipage}[b]{0.42\paperwidth}
 \caption{Greek letters: mappings for \keynv{G-j}}
 \label{tab:greek_letters}
+\centering
 \begin{tabular}{llll}
 \toprule
 Input & Result & Input for uppercase & Uppercase \\
@@ -524,6 +530,23 @@ Input & Result & Input for uppercase & Uppercase \\
 \key|t| & θ & \key|S-t| & Θ \\
 \bottomrule
 \end{tabular}
+\end{minipage}\hfill
+\begin{minipage}[b]{0.42\paperwidth}
+\caption{Zhuang tone letters: mappings for \keynv{G-1}}
+\label{tab:zhuang_tones}
+\centering
+\begin{tabular}{llll}
+\toprule
+Input & Result & Input for uppercase & Uppercase \\
+\midrule
+\key|2| & ƨ & \key|S-2| & Ƨ \\
+\key|3| & з & \key|S-3| & З \\
+\key|4| & ч & \key|S-4| & Ч \\
+\key|5| & ƽ & \key|S-5| & Ƽ \\
+\key|6| & ƅ & \key|S-6| & Ƅ \\
+\bottomrule
+\end{tabular}
+\end{minipage}
 \end{table}
 
 Certain letters from the Greek alphabet can be produced using the \key|G-j| dead key.
@@ -544,21 +567,6 @@ For instance, a superscript \out{ʷ} can be produced by \key|G-w w|.
 \subsection{Zhuang tone letters}
 \label{sec:zhuang_tones}
 
-\begin{table}[b]
-\caption{Zhuang tone letters: mappings for \keynv{G-1}}
-\label{tab:zhuang_tones}
-\centering
-\begin{tabular}{llll}
-\toprule
-Input & Result & Input for uppercase & Uppercase \\
-\midrule
-\key|2| & ƨ & \key|S-2| & Ƨ \\
-\key|3| & з & \key|S-3| & З \\
-\key|4| & ч & \key|S-4| & Ч \\
-\key|5| & ƽ & \key|S-5| & Ƽ \\
-\key|6| & ƅ & \key|S-6| & Ƅ \\
-\end{tabular}
-\end{table}
 
 Zhuang tone letters can be accessed via the \key|G-1| dead key.
 The mappings are shown in Table~\ref{tab:zhuang_tones}.
@@ -704,9 +712,7 @@ The types of space which can be produced using this dead key,
   along with their Unicode code points,
   are shown in Table~\ref{tab:spaces}.
 
-\subsection{Arrows}
-\label{sec:arrows}
-
+% These two floats ‘should’ go later, but it looks better here
 \begin{table}
 \caption{Arrows: mappings for \keynv{G-/} dead key}
 \label{tab:arrows}
@@ -741,16 +747,7 @@ Input & \multicolumn{1}{l}{Result} \\
 \end{tabular}
 \end{table}
 
-Arrows are produced by the \key|G-/| dead key.
-Arrows are arranged in a roughly mnemonic way around the keyboard:
-  for instance, the most common arrows \out{↑}, \out{←}, \out{↓} and~\out{→}
-  are produced by typing \key|G-/ w|, \key|G-/ a|, \key|G-/ s| and \key|G-/ d| respectively.
-The full list of mappings can be found in Table~\ref{tab:arrows}.
-
-\subsection{Mathematical and related symbols}
-\label{sec:mathematical_and_related_symbols}
-
-\begin{table}
+\begin{wraptable}{r}{5cm}
 \centering
 \caption{Mathematical and related symbols: mappings for \keynv{G-=} dead key}
 \label{tab:math}
@@ -785,7 +782,20 @@ Input & \multicolumn{1}{l}{Result} & Input & \multicolumn{1}{l}{Result} \\
 \key|S-[|   & ⊆ & \key|S-z|   & ℤ \\
 \bottomrule
 \end{tabular}
-\end{table}
+\end{wraptable}
+
+\newpage
+\subsection{Arrows}
+\label{sec:arrows}
+
+Arrows are produced by the \key|G-/| dead key.
+Arrows are arranged in a roughly mnemonic way around the keyboard:
+  for instance, the most common arrows \out{↑}, \out{←}, \out{↓} and~\out{→}
+  are produced by typing \key|G-/ w|, \key|G-/ a|, \key|G-/ s| and \key|G-/ d| respectively.
+The full list of mappings can be found in Table~\ref{tab:arrows}.
+
+\subsection{Mathematical and related symbols}
+\label{sec:mathematical_and_related_symbols}
 
 Mathematical symbols --- as well as other, related symbols, such as those used in Haskell --- can be produced by the \key|G-=| dead key.
 In more detail, this dead key allows the production of:
