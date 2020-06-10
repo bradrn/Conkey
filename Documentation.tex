@@ -553,31 +553,33 @@ For convenience, there are several ways of producing each click letter:
 \subsection{Greek letters}
 \label{sec:greek_letters}
 
-\begin{table}[b]
-\centerfloat
-\begin{minipage}[b]{0.42\paperwidth}
+\begin{table}
+\centering
 \caption{Greek letters: mappings for \keynv{G-j}}
 \label{tab:greek_letters}
-\centering
-\begin{tabular}{llll}
+\begin{tabular}{llllllll}
 \toprule
-Input & Result & Input for uppercase & Uppercase \\
+Input & Result & Input for uppercase & Uppercase & Input & Result & Input for uppercase & Uppercase \\
 \midrule
-\key|a| & α & & \\
-\key|b| & β & & \\
-\key|d| & δ & \key|S-d| & Δ \\
-\key|f| & φ & \key|S-f| & Φ \\
-\key|g| & γ & \key|S-g| & Γ \\
-\key|l| & λ & \key|S-l| & Λ \\
-\key|m| & μ & & \\
-\key|p| & π & \key|S-p| & Π \\
-\key|r| & ρ & & \\
-\key|s| & σ & \key|S-s| & Σ \\
-\key|t| & θ & \key|S-t| & Θ \\
+\key|a| & α & \key|S-a| & Α & \key|q| & ξ & \key|S-q| & Ξ \\
+\key|b| & β & \key|S-b| & Β & \key|o| & ο & \key|S-o| & Ο \\
+\key|g| & γ & \key|S-g| & Γ & \key|p| & π & \key|S-p| & Π \\
+\key|d| & δ & \key|S-d| & Δ & \key|r| & ρ & \key|S-r| & Ρ \\
+\key|e| & ε & \key|S-e| & Ε & \key|s| & σ & \key|S-s| & Σ \\
+\key|z| & ζ & \key|S-z| & Ζ & \key|c| & ς & N/A & N/A \\
+\key|h| & η & \key|S-h| & Η & \key|t| & τ & \key|S-t| & Τ \\
+\key|j| & θ & \key|S-j| & Θ & \key|u| & υ & \key|S-u| & Υ \\
+\key|i| & ι & \key|S-i| & Ι & \key|f| & φ & \key|S-f| & Φ \\
+\key|k| & κ & \key|S-k| & Κ & \key|x| & χ & \key|S-x| & Χ \\
+\key|l| & λ & \key|S-l| & Λ & \key|v| & ψ & \key|S-v| & Ψ \\
+\key|m| & μ & \key|S-m| & Μ & \key|w| & ω & \key|S-w| & Ω \\
+\key|n| & ν & \key|S-n| & Ν & & & & \\
 \bottomrule
 \end{tabular}
-\end{minipage}\hfill
-\begin{minipage}[b]{0.42\paperwidth}
+\end{table}
+
+\begin{table}[b]
+\centering
 \caption{Zhuang tone letters: mappings for \keynv{G-1}}
 \label{tab:zhuang_tones}
 \centering
@@ -592,10 +594,9 @@ Input & Result & Input for uppercase & Uppercase \\
 \key|6| & ƅ & \key|S-6| & Ƅ \\
 \bottomrule
 \end{tabular}
-\end{minipage}
 \end{table}
 
-Certain letters from the Greek alphabet can be produced using the \key|G-j| dead key.
+Greek letters can be produced using the \key|G-j| dead key.
 The mappings for this dead key are shown in Table~\ref{tab:greek_letters}.
 
 \subsection{Superscripts}
