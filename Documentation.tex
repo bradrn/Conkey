@@ -758,8 +758,9 @@ The types of space which can be produced using this dead key,
   along with their Unicode code points,
   are shown in Table~\ref{tab:spaces}.
 
-% These two floats ‘should’ go later, but it looks better here
 \begin{table}
+\centering
+\begin{minipage}{0.4\linewidth}
 \caption{Arrows: mappings for \keynv{G-/} dead key}
 \label{tab:arrows}
 \centering
@@ -791,9 +792,8 @@ Input & \multicolumn{1}{l}{Result} \\
 \key|k| & ⇕ \\
 \bottomrule&
 \end{tabular}
-\end{table}
-
-\begin{wraptable}{r}{5cm}
+\end{minipage}\hfill
+\begin{minipage}{0.4\linewidth}
 \centering
 \caption{Mathematical and related symbols: mappings for \keynv{G-=} dead key}
 \label{tab:math}
@@ -828,9 +828,9 @@ Input & \multicolumn{1}{l}{Result} & Input & \multicolumn{1}{l}{Result} \\
 \key|S-[|   & ⊆ & \key|S-z|   & ℤ \\
 \bottomrule
 \end{tabular}
-\end{wraptable}
+\end{minipage}
+\end{table}
 
-\newpage
 \subsection{Arrows}
 \label{sec:arrows}
 
