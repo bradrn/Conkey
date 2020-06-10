@@ -405,90 +405,136 @@ Conkey also includes four combining diacritics for bars.
 \label{sec:non-eng_letters}
 
 \begin{table}
-\centerfloat
-\begin{minipage}[t]{0.42\paperwidth}
-\caption{Latin-script letters in Conkey}
-\label{tab:latin_letters}
 \centering
-\begin{tabular}{llll}
-\toprule
-Key & Letter & Key for uppercase & Uppercase \\
-\midrule
-\key|G-a| & æ & \key|G-S-a| & Æ \\
-\key|G-e| & ɛ & \key|G-S-e| & Ɛ \\
-\key|G-r| & ə & \key|G-S-r| & Ə \\
-\key|G-y| & ǝ & \key|G-S-y| & Ǝ \\
-\key|G-g| & ɣ & \key|G-S-g| & Ɣ \\
-\key|G-h| & ꜧ & \key|G-S-h| & Ꜧ \\
-\key|G-i| & ı & N/A & N/A \\
-\key|G-1 1| & ɩ & N/A & N/A \\
-\key|G-n| & ŋ & \key|G-S-n| & Ŋ \\
-\key|G-m| & ꞑ & \key|G-S-m| & Ꞑ \\
-\key|G-k| & ɔ & \key|G-S-o| & Ɔ \\
-\key|G-o e| & œ & \key|G-o S-e| & Œ \\
-\key|G-o w| & \tfb{ꞷ} & \key|G-o S-w| & \tfb{Ꞷ} \\
-\key|G-o u| & ʊ & \key|G-o S-u| & Ʊ \\
-\key|G-o o| & ꝏ & \key|G-o S-o| & Ꝏ \\
-\key|G-s| & ß & \key|G-S-s| & ẞ \\
-\key|G-d| & ʃ & \key|G-S-d| & Ʃ \\
-\key|G-f| & ſ & N/A & N/A \\
-\key|G-t| & þ & \key|G-S-t| & Þ \\
-\key|G-u| & ɯ & \key|G-S-u| & Ɯ \\
-\key|G-v| & ʌ & \key|G-S-v| & \tfb{Ʌ} \\
-\key|G-z| & ʒ & \key|G-S-z| & Ʒ \\
-\key|G-x| & ʔ & N/A & N/A \\
-\key|G-q| & ɂ  & \key|G-S-q| & Ɂ \\
-\key|G-c| & ꞌ & \key|G-S-c| & Ꞌ \\
-\key|G-b| & ʕ & N/A & N/A \\
-\key|G-S-x| & ʻ & N/A & N/A \\
-\bottomrule
-\end{tabular}
-% \end{table}
-\end{minipage}\hfill
-\begin{minipage}[t]{0.42\paperwidth}
-% \begin{table}
-\caption{Mappings for \keynv{G-l}}
-\label{tab:g-l_mappings}
+\begin{minipage}{0.4\linewidth}
 \centering
+\caption{Latin-script letters accessed via a single key}
+\label{tab:single_key}
 \begin{tabular}{llll}
 \toprule
 Input & Result & Input for uppercase & Uppercase \\
 \midrule
-\key|a| & ɑ & \key|S-a| & \tfb{Ɑ} \\
-\key|b| & ƃ & \key|S-b| & Ƃ \\
-\key|d| & ƌ & \key|S-d| & Ƌ \\
-\key|G-v| & \tfb{ꞵ} & \key|G-S-v| & \tfb{Ꞵ} \\
-\key|g| & ƣ & \key|S-g| & Ƣ \\
-\key|h| & ƕ & \key|S-h| & Ƕ \\
-\key|x| & ḫ & \key|S-x| & Ḫ \\
-\key|k| & ĸ & \key|N/A| & N/A \\
-\key|l| & ɬ & \key|S-l| & Ɬ \\
-\key|n| & ƞ & \key|S-n| & Ƞ \\
-\key|o| & ȣ & \key|S-o| & Ȣ \\
-\key|w| & ƿ & \key|S-w| & Ƿ \\
-\key|y| & \tfb{ь} & \key|S-y| & \tfb{Ь} \\
-\key|z| & ȝ & \key|S-z| & Ȝ \\
-\key|3| & ꜫ & \key|S-3| & Ꜫ \\
-\key|4| & ꜭ & \key|S-4| & Ꜭ \\
-\key|5| & ꜯ & \key|S-5| & Ꜯ \\
-\key|'| & ꜣ & \key|S-'| & Ꜣ \\
-\key|G-r| & ꜥ & \key|G-S-r| & Ꜥ \\
-\key|G-z| & Ƹ & \key|G-S-z| & ƹ \\
+\key|G-a| & æ & \key|G-S-a| & Æ \\
+\key|G-e| & ɛ & \key|G-S-e| & Ɛ \\
+\key|G-r| & ə & \key|G-S-r| & Ə \\
+\key|G-g| & ɣ & \key|G-S-g| & Ɣ \\
+\key|G-i| & ı &             &  \\
+\key|G-l| & ɬ & \key|G-S-l| & Ɬ \\
+\key|G-n| & ŋ & \key|G-S-n| & Ŋ \\
+\key|G-o| & ɔ & \key|G-S-o| & Ɔ \\
+\key|G-k| & œ & \key|G-S-k| & Œ \\
+\key|G-s| & ß & \key|G-S-s| & ẞ \\
+\key|G-t| & þ & \key|G-S-t| & Þ \\
+\key|G-u| & ɯ & \key|G-S-u| & Ɯ \\
+\key|G-v| & ʌ & \key|G-S-v| & Ʌ \\
+\key|G-z| & ʒ & \key|G-S-z| & Ʒ \\
+\key|G-x| & ʔ &             &  \\
+\key|G-c| & ʕ &             &  \\
+\key|G-q| & ɂ & \key|G-S-q| & Ɂ \\
+\key|G-b| & ꞌ & \key|G-S-b| & Ꞌ \\
+\key|G-S-s| & ʻ &             &  \\
+\bottomrule
+\end{tabular}
+\end{minipage}\hfill
+\begin{minipage}{0.4\linewidth}
+\centering
+\cprotect\caption{Latin-script letters accessed via \key|G-d|}
+\label{tab:letters_g-d}
+\begin{tabular}{llll}
+\toprule
+Input & Result & Input for uppercase & Uppercase \\
+\midrule
+\key|G-d a| & ɑ       & \key|G-d S-a| & Ɑ \\
+\key|G-d h| & ḫ       & \key|G-d S-h| & Ḫ \\
+\key|G-d b| & \tfb{ꞵ} & \key|G-d S-b| & \tfb{Ꞵ} \\
+\key|G-d e| & ǝ       & \key|G-d S-e| & Ǝ \\
+\key|G-d i| & ɩ       & \key|G-d S-i| & Ɩ \\
+\key|G-d w| & \tfb{ꞷ} & \key|G-d S-w| & \tfb{Ꞷ} \\
+\key|G-d u| & ʊ       & \key|G-d S-u| & Ʊ \\
+\key|G-d s| & ʃ       & \key|G-d S-s| & Ʃ \\
+\key|G-d z| & ƹ       & \key|G-d S-z| & Ƹ \\
+\key|G-d x| & ꜣ       &               & Ꜣ \\
+\key|G-d c| & ꜥ       &               & Ꜥ \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+
+\begin{minipage}{0.4\linewidth}
+\centering
+\cprotect\caption{Latin-script letters accessed via \key|G-m|}
+\label{tab:letters_g-m}
+\begin{tabular}{llll}
+\toprule
+Input & Result & Input for uppercase & Uppercase \\
+\midrule
+\key|G-m k| & ĸ &               &  \\
+\key|G-m n| & ƞ & \key|G-m S-n| & Ƞ \\
+\key|G-m o| & ꝏ & \key|G-m S-o| & Ꝏ \\
+\key|G-m u| & ȣ & \key|G-m S-u| & Ȣ \\
+\key|G-m 3| & ꜫ & \key|G-m S-3| & Ꜫ \\
+\key|G-m 4| & ꜭ & \key|G-m S-4| & Ꜭ \\
+\key|G-m 5| & ꜯ & \key|G-m S-5| & Ꜯ \\
+\bottomrule
+\end{tabular}
+\end{minipage}\hfill
+\begin{minipage}{0.4\linewidth}
+\centering
+\cprotect\caption{Latin-script letters accessed via \key|G-f|}
+\label{tab:letters_g-f}
+\begin{tabular}{llll}
+\toprule
+Input & Result & Input for uppercase & Uppercase \\
+\midrule
+\key|G-f b| & ƃ & \key|G-f S-b| & Ƃ \\
+\key|G-f d| & ƌ & \key|G-f S-d| & Ƌ \\
+\key|G-f g| & ƣ & \key|G-f S-g| & Ƣ \\
+\key|G-f h| & ꜧ & \key|G-f S-h| & Ꜧ \\
+\key|G-f j| & ƕ & \key|G-f S-j| & Ƕ \\
+\key|G-f n| & ꞑ & \key|G-f S-n| & Ꞑ \\
+\key|G-f s| & ſ &               &  \\
+\key|G-f w| & ƿ & \key|G-f S-w| & Ƿ \\
+\key|G-f y| & ȝ & \key|G-f S-y| & Ȝ \\
+\key|G-f '| & ь & \key|G-f S-'| & Ь \\
 \bottomrule
 \end{tabular}
 \end{minipage}
 \end{table}
 
 Conkey includes many Latin-script letters which are not used in English.
-These letters are shown in Table~\ref{tab:latin_letters}, along with the keys to produce each letter and its capital (if any).
+These letters may be accessed using one-~and two-key sequences as follows:
 
-Since there is not enough space on the keyboard to include every Latin-script letter,
-  two dead keys are also used, which map keystrokes to (semi-arbitrary-chosen) other letters.
-For instance, \key|G-l g| returns \out{ƣ}, and \key|G-l S-'| returns \out{Ꜣ}.
-The main dead key used for this purpose is \key|G-l|;
-  its mappings are shown in Table~\ref{tab:g-l_mappings}.
-There are also a small number of letters which are produced via the dead key \key|G-o|;
-  the mappings of this key are shown as part of Table~\ref{tab:latin_letters}.
+\begin{itemize}
+\item
+  The most common letters may be accessed using only a single key, with an AltGr modifier.
+  This category includes letters currently used by European languages (e.g.~\out{ß}),
+    particularly widespread non-European letters (e.g.~\out{ɛ}),
+    and letters which are widely used by conlangers (e.g.~\out{ɬ}).
+  These letters are listed in Table~\ref{tab:single_key}.
+\item
+  Letters used most commonly in African languages (e.g.~\out{Ǝ}),
+    as well as those used for the transcription of Semitic and Ancient~Egyptian (e.g.~\out{ḫ} and~\out{ꜣ}),
+    may be accessed by two-key sequences starting with \key|G-d|.
+  These letters are listed in Table~\ref{tab:letters_g-d}.
+\item
+  Letters formerly used in orthographies from Asia and the former~USSR (e.g.~\out{ƃ} and~\out{ƣ}),
+    as well as letters formerly used in Europe (e.g.~\out{ſ}),
+    may be accessed by two-key sequences starting with \key|G-f|.
+  These letters are listed in Table~\ref{tab:letters_g-f}.
+\item
+  Letters used in American orthographies e.g.~\out{ꝏ})
+    may be accessed by two-key sequences starting with \key|G-m|.
+  These letters are listed in Table~\ref{tab:letters_g-m}.
+\end{itemize}
+
+% These letters are shown in Table~\ref{tab:latin_letters}, along with the keys to produce each letter and its capital (if any).
+
+% Since there is not enough space on the keyboard to include every Latin-script letter,
+%   two dead keys are also used, which map keystrokes to (semi-arbitrary-chosen) other letters.
+% For instance, \key|G-l g| returns \out{ƣ}, and \key|G-l S-'| returns \out{Ꜣ}.
+% The main dead key used for this purpose is \key|G-l|;
+%   its mappings are shown in Table~\ref{tab:g-l_mappings}.
+% There are also a small number of letters which are produced via the dead key \key|G-o|;
+%   the mappings of this key are shown as part of Table~\ref{tab:latin_letters}.
 
 \subsection{Click letters}
 \label{sec:clicks}
