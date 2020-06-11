@@ -175,7 +175,7 @@ Outside tables, the following formatting conventions are used:
 \subsection{Diacritics with precomposed characters}
 \label{sec:diacritics_with_precomposed_characters}
 
-\begin{wraptable}[23]{r}{5cm}
+\begin{wraptable}[28]{r}{5cm}
 \centering
 \cprotect\caption{Combining diacritics: mappings for \key|G-]| dead key}
 \label{tab:misc_diacritics_mappings}
@@ -199,6 +199,14 @@ Input & Result \\
 \key|]| & Modifier vertical line ◌ˈ \\
 \key|:| & Modifier colon ◌꞉ \\
 \key|;| & \makecell{Modifier triangular colon ◌ː\\(i.e.\ \textsc{ipa} length symbol)} \\
+\key|-| & Modifier macron ◌ˉ \\
+\key|S--| & Modifier low macron ◌ˍ \\
+\key|ˊ| & Modifier acute accent ◌ˊ \\
+\key|G-ˋ| & Modifier grave accent ◌ˋ \\
+\key|)| & Modifier dot vertical bar ◌ꜗ \\
+\key|/| & Modifier dot slash ◌ꜘ \\
+\key|G--| & Modifier dot horizontal bar ◌ꜙ \\
+\key|S-]| & Modifier lower right corner ◌ꜚ \\
 \key|G-.| & \makecell{Sinological dot \tfb{◌ꞏ}\\(commonly used as half-colon\\length symbol)} \\
 \bottomrule
 \end{tabular}
@@ -599,8 +607,8 @@ Input & Result & Input for uppercase & Uppercase \\
 Greek letters can be produced using the \key|G-j| dead key.
 The mappings for this dead key are shown in Table~\ref{tab:greek_letters}.
 
-\subsection{Superscripts}
-\label{sec:superscripts}
+\subsection{Superscripts and subscripts}
+\label{sec:superscripts-subscripts}
 
 Superscript letters and symbols can be typed using \key|G-w <char>|, where \key|<char>| is one of the following:
 \begin{itemize}[noitemsep]
@@ -610,6 +618,13 @@ Superscript letters and symbols can be typed using \key|G-w <char>|, where \key|
 \item \key|+|, \key|-| or \key|G-j| (which produces a superscript \out{ᶿ})
 \end{itemize}
 For instance, a superscript \out{ʷ} can be produced by \key|G-w w|.
+
+Similarly, subscripts may be typed using \key|G-S-w <char>|, where \key|<char>| is one of the following:
+\begin{itemize}[noitemsep]
+\item Any number
+\item A lowercase letter in the following list: \texttt{aehijklmnoprstuvx}
+\item \key|+| or \key|-|
+\end{itemize}
 
 \subsection{Zhuang tone letters}
 \label{sec:zhuang_tones}
