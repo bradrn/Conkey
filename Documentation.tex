@@ -175,7 +175,7 @@ Outside tables, the following formatting conventions are used:
 \subsection{Diacritics with precomposed characters}
 \label{sec:diacritics_with_precomposed_characters}
 
-\begin{wraptable}[28]{r}{5cm}
+\begin{wraptable}[30]{r}{5cm}
 \centering
 \cprotect\caption{Combining diacritics: mappings for \key|G-]| dead key}
 \label{tab:misc_diacritics_mappings}
@@ -200,6 +200,7 @@ Input & Result \\
 \key|]| & Modifier vertical line ◌ˈ \\
 \key|:| & Modifier colon ◌꞉ \\
 \key|;| & \makecell{Modifier triangular colon ◌ː\\(i.e.\ \textsc{ipa} length symbol)} \\
+\key|=| & Modifier equals sign ◌꞊ \\
 \key|-| & Modifier macron ◌ˉ \\
 \key|S--| & Modifier low macron ◌ˍ \\
 \key|ˊ| & Modifier acute accent ◌ˊ \\
@@ -680,6 +681,8 @@ Dashes can be produced using the \key|G--| dead key.
 (Plain \key|-| produces a \textit{hyphen-minus},
   an \textsc{ascii} symbol which can act as both a hyphen and a minus
   but is not recommended in professionally-produced text.)
+This key may also be used to produce double~hyphens:
+\key|G-- S-=| produces a plain~double~hyphen \out{⹀}, and \key|G-- /| produces an oblique~double~hyphen \out{⸗}.
 
 \subsection{Dots}
 \label{sec:dots}
