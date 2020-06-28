@@ -107,7 +107,7 @@ This particular piece of notation is a bit redundant (e.g.~\keynv{S-a} is the sa
 Throughout this guide, the two notations will be used interchangeably.
 }
 
-For instance, \key|G-_ r| means `press AltGr+shift+\key|-| at the same time, then release it, then press \key|r|'.
+For instance, \key|G-_ r| means `press AltGr+shift+\key|-| at the same time, then release them, then press \key|r|'.
 This key combination results in \out{ṟ} when used with Conkey.
 
 Note that Conkey is designed around the US keyboard layout, rather than the UK keyboard layout.
@@ -120,39 +120,40 @@ For instance, \key|\| refers to the key next to \key|]|, rather than the key nex
 A \textit{dead key} is a key which, instead of entering a letter or symbol itself, changes something about the next keystroke.
 Usually a dead key will add a diacritic to the next letter; Conkey uses many dead keys for this purpose.
 For instance, the dead key \key|G-'| adds an acute accent to the following letter,
-  so typing something like \key|G-' a| will generate the letter \out{á}.
+  so typing something like \key|G-' a| will generate the letter~\out{á}.
 
 Conkey also uses some dead keys which modify the following letter with a hook or bar.
 For instance, the dead key \key|G-{| adds a hook to the following letter,
-  so typing something like \key|G-{ b| will generate the letter \out{ɓ}.
+  so typing something like \key|G-{ b| will generate the letter~\out{ɓ}.
 
 Note that dead keys will typically only accept certain inputs,
   with unsupported inputs producing unspecified behaviour\footnotemark.
-The allowed inputs for each dead key are specified in tabular format when each key is described.
+The allowed inputs for each dead key will be specified in tabular format when each key is described.
 \footnotetext{%
-On Windows, this will result in a specific character being entered, depending on the dead key.
+On Windows, this will result in an unwanted character being entered.
 Press the backspace key to get rid of it.
-On Linux, this should just ignore the dead key.%
+On Linux, this should just do nothing.%
 }
 
 \section{Key sequences}
 \label{sec:key_seqs}
 
 To allow the input of punctuation and non-English letters, Conkey makes extensive use of \textit{key sequences}.
-This term refers to sequences of two keys which only produce one letter when typed.
+This term refers to sequences of two keys, which when typed in sequence produce only one letter.
 For instance, the left quote \out{‘} is produced by the key sequence \key|G-' (|, while the letter \out{ƣ} is produced by the key sequence \key|G-f g|.
 (Note that if you press an incorrect key sequence, you will either get no result or an incorrect output;
   it is fine to simply delete any incorrect output which you accidentally produced.)
 
 Key sequences are used primarily for reasons of space: there is simply not enough space on the keyboard to fit every letter and symbol supported by Conkey,
   so key sequences are the only way for Conkey to support as many letters and symbols as it does.
-Additionally, key sequences can have a mnemonic role: for instance, all key sequences starting with \key|G-p| produce click letters.
+Additionally, key sequences can have a mnemonic role: for instance, all key sequences starting with \key|G-p| produce click letters,
+  which is preferable to having the click letters scattered semi-randomly around the keyboard.
 
 When using key sequences to input letters, one important detail to be aware of is capitalisation.
-To capitalise a letter which is produced by a key sequence, the \textsc{shift} key should only be pressed for the last key in the sequence.
+To capitalise a letter which is produced by a key sequence, the Shift key should only be held during the last key in the sequence.
 For instance, the lowercase letter \out{ƣ} is produced by the key sequence \key|G-f g|,
   while the capital letter \out{Ƣ} is produced by the key sequence \key|G-f G|,
-  rather than \key|G-F g| or \key|G-F S-G|.
+  rather than \key|G-F g| or \key|G-F G|.
 
 \section{Formatting conventions}
 \label{sec:formatting}
@@ -160,13 +161,12 @@ For instance, the lowercase letter \out{ƣ} is produced by the key sequence \key
 Outside tables, the following formatting conventions are used:
 
 \begin{itemize}[noitemsep]
-\item \key|x| (in a monospace font) refers to the key(s) denoted by \key|x| (see Section~\ref{sec:key_notation} below for details).
-\item \out{x} refers to the letter (or symbol) `x', as produced by Conkey.
+\item \key|x| (in a monospace font) refers to a key which you need to press (using the key notation described in Section~\ref{sec:key_notation} above).
+\item \out{x} (with a grey background) )refers to a letter or symbol which is produced by Conkey.
 \end{itemize}
 
-The various letters and symbols of Conkey are listed within tables.
-These tables are formatted using a consistent set of conventions.
-For instance, here are some selected example rows:
+Additionally, tables are used when listing the various letters and symbols of Conkey.
+These tables will look something like this:
 
 \medskip
 
@@ -189,9 +189,9 @@ The third column, marked `Uppercase?', contains a check~mark if that letter corr
   and a cross~mark if that letter does not correspond to any uppercase letter.
 For instance, pressing \key|G-d I| results in uppercase \out{Ɩ},
   but pressing \key|G-d K| does not give any sensible output.
-(Recall that uppercase letters are typed by holding the \textsc{shift} key;
-  for a key sequence, \textsc{shift} must only be held during the last key pressed.)
-The `Uppercase?' column may be missing for tables containing symbols (which do not have uppercases).
+(Recall that uppercase letters are entered by holding the Shift key;
+  for a key sequence, Shift must be held only during the last key of the sequence.)
+The `Uppercase?' column may be missing for tables which list symbols rather than letters, as symbols generally lack uppercases.
 
 \chapter{Keyboard layout}
 \label{sec:keyboard_layout}
@@ -243,16 +243,15 @@ Input & Result \\
 
 The main mechanism for entering diacritics in Conkey is a number of dead keys,
   enumerated in Table~\ref{tab:dk_for_diacritics}.
-These dead keys are used for entering diacritics which have precomposed base+diacritic pairs in Unicode.
 Each column of the table contains information about the dead key on that row:
 \begin{itemize}
 \item `Diacritic' shows the name of the diacritic, as well as a representation of the diacritic itself.
 \item `Dead key' shows the location of the dead key on the keyboard.
-\item `Acceptable inputs' contains a list of input letters which can be used with this dead key.
+\item `Acceptable inputs' contains a list of input letters which can be used with this dead key.\footnotemark
   For clarity, every list of inputs in this column has been separated into lower- and uppercase letters (sometimes on two lines).
 
-  This column is present because not all letters can be used with every diacritic,
-    as Unicode does not contain precomposed characters for every base+diacritic combination.
+  This column is required because not all letter+diacritic combinations are present in Unicode;
+    the missing combination thus cannot be typed in the same way.
   For instance, \out{a̋} cannot be typed using \key|G-: a|, since that particular combination is not in Unicode.
 \item `Notes' contains any other information which may be relevant to that dead key.
 \end{itemize}
@@ -260,25 +259,32 @@ For instance, the row for the `ring above' diacritic states that this diacritic 
   and that the available combinations are \key|G-8 a|, \key|G-8 u|, \key|G-8 w|, \key|G-8 y|, \key|G-8 A| and \key|G-8 U|
   (which produce \out{å}, \out{ů}, \out{ẘ}, \out{ẙ}, \out{Å}, \out{Ů} respectively).
 
-Additionally, every one of the above dead keys can be used to insert the appropriate combining diacritic,
-  for use in situations where there is no precomposed character.
-This can be produced by typing space (here denoted \key|SPC|) after the dead key.
-For instance, although there is no precomposed Unicode character for \out{a̋},
-  this may still be typed by first typing \key|a|, and then typing \key|G-: SPC| to produce the combining double acute accent.
-
+Additionally, every one of the above dead keys can be used to insert the corresponding combining diacritic.
+This is a form of the diacritic which acts as an independent character and combines with the previous letter,
+  rather than simply being a part of the next letter.
+Combining diacritics may be inserted by pressing the Space bar immediately after the appropriate dead key.
+Combining diacritics are useful when Unicode does not include a precomposed base+diacritic combination;
+  for instance, although \out{a̋} is not present as an independent letter,
+  it may still be entered by first typing \key|a|, and then typing \key|G-: SPC| to produce the combining double acute accent.
+(Note that if you want to delete a letter+diacritic inserted in this manner,
+ you will need to press Backspace twice rather than once:
+  once to delete the diacritic, and then another time to delete the letter.)
 
 \subsection{Combining diacritics and modifier letters}
 \label{sec:combining_diacritics}
 
 In addition to diacritics which come with precomposed characters, Unicode includes many diacritics which exist only as combining diacritics,
   without any corresponding precomposed characters.
-These diacritics can be typed using the \key|G-]| dead key, with mappings as shown in Table~\ref{tab:misc_diacritics_mappings}.
+These diacritics can be entered using key sequences starting with \key|G-]|, as shown in Table~\ref{tab:misc_diacritics_mappings}.
 
 Unicode also includes some \textit{modifier letters}.
 These are diacritic-like characters which are placed after the base letter rather than above or below it.
 Examples include the \textsc{IPA} length symbol, or the apostrophe used to indicate ejectives;
   these both modify a base letter, but are placed after the base like a standalone puncuation character.
-Modifier letters can also be typed using the \key|G-]| dead key, using the mappings in Table~\ref{tab:misc_diacritics_mappings}.
+(Occasionally modifier letters are also used as independent letters;
+  for instance, when an apostrophe is used as a letter for the glottal stop,
+  the recommendation is to use the modifier apostrophe rather than the punctuation apostrophe.)
+Modifier letters can also be entered using key sequences starting with \key|G-]|, as shown in Table~\ref{tab:misc_diacritics_mappings}.
 
 \begin{table}
 \centerfloat
@@ -297,7 +303,7 @@ Diaeresis below ◌̤  & \key|G-3|   & \ins*{u}{U}                              
 Double acute ◌̋     & \key|G-:|   & \ins*{ou}{OU}                                   & \\
 Grave ◌̀            & \key|G-`|   & \ins{aeinouwy}{AEINOUWY}                        & \\
 Tilde ◌̃            & \key|G-~|   & \ins{aeinouvy}{AEINOUVY}                        & \\
-Tilde below ◌̰      & \key|G-#|   & \ins*{elu}{elU}                                 & \\
+Tilde below ◌̰      & \key|G-#|   & \ins*{eiu}{EIU}                                 & \\
 Caron ◌̌            & \key|G-5|   & \ins{acdeghijklnorstuz}{ACDEGHIKLNORSTUZ}       & \key|G-5 G-z| and \key|G-5 G-Z| produce \out{ǯ} and \out{Ǯ} respectively. \\
 Circumflex ◌̂       & \key|G-6|   & \ins{aceghijosuwyz}{ACEGHIJOSUWYZ}              & \\
 Circumflex below ◌̭ & \key|G-7|   & \ins*{delntu}{DELNTU}                           & \\
@@ -394,7 +400,7 @@ Input
 \label{sec:diacritics_spanning_two_letters}
 
 Certain diacritics span two letters rather than one --- for example, the tie used for \textsc{ipa} diphthongs such as \out{a͡i}, or the line above the Menominee grapheme \out{a͞e}.
-Such diacritics can be typed using the dead key \key|G-2|:
+Such diacritics may be entered using key sequences starting with \key|G-2|:
 
 \begin{itemize}[noitemsep]
 \item \key|G-2 G-9| yields the double inverted breve below \out{◌͜◌}
@@ -406,7 +412,7 @@ Such diacritics can be typed using the dead key \key|G-2|:
 \end{itemize}
 
 These diacritics must be typed between the two individual letters they span;
-  for instance, \out{a͞e} is typed as \key|a G-2 G-- e|.
+  for instance, \out{a͞e} is entered as \key|a G-2 G-- e|.
 
 \subsection{Letters containing diacritics (hooks and bars)}
 \label{sec:letters_containing_diacritics}
@@ -417,6 +423,9 @@ These include letters with hooks (e.g.\ \out{ɓ} and \out{ƒ}) and bars (e.g.\ \
 Hooks are produced via the \key|G-{| dead key, with mappings as in Table~\ref{tab:hook_mappings},
   while bars are produced via the \key|G-\| and \key!G-|! dead keys, with mappings as in Table~\ref{tab:bar_mappings}.
 (Two dead keys are necessary for bars as some barred characters have two variations.)
+For instance, \out{ɓ} is produced by typing \key|G-{ b|,
+  \out{ø} is produced by typing \key|G-\ o|,
+  and \out{ɵ} is produced by typing \key!G-| o!.
 
 Conkey also includes four combining diacritics for bars.
 \out{◌̵} and \out{◌̷} are produced by \key|C-\ SPC| and \key|C-\ \| respectively,
@@ -525,7 +534,7 @@ These letters may be accessed using one-~and two-key sequences as follows:
   These letters are listed in Table~\ref{tab:single_key}.
 \item
   Letters used in current and former orthographies of Eurasia (e.g.~\out{ƃ} and~\out{ƣ})
-    --- including historic European letters (e.g.~\out{ſ}), but excluding letters used primarily for Semitic languages (e.g.~\out{ḫ}) ---
+    --- including historic European letters (e.g.~\out{ſ}), but excluding letters used primarily for the transcription of Semitic languages (e.g.~\out{ḫ}) ---
     may be accessed by two-key sequences starting with \key|G-f|.
   These letters are listed in Table~\ref{tab:letters_g-f}.
 \item
@@ -533,28 +542,17 @@ These letters may be accessed using one-~and two-key sequences as follows:
   These letters are listed in Table~\ref{tab:letters_g-d}.
 \end{itemize}
 
-% These letters are shown in Table~\ref{tab:latin_letters}, along with the keys to produce each letter and its capital (if any).
-
-% Since there is not enough space on the keyboard to include every Latin-script letter,
-%   two dead keys are also used, which map keystrokes to (semi-arbitrary-chosen) other letters.
-% For instance, \key|G-l g| returns \out{ƣ}, and \key|G-l "| returns \out{Ꜣ}.
-% The main dead key used for this purpose is \key|G-l|;
-%   its mappings are shown in Table~\ref{tab:g-l_mappings}.
-% There are also a small number of letters which are produced via the dead key \key|G-o|;
-%   the mappings of this key are shown as part of Table~\ref{tab:latin_letters}.
-
 \subsection{Click letters}
 \label{sec:clicks}
 
-Click letters can be produced using the key sequences starting with \key|G-p|.
-For convenience, there are several ways of producing each click letter:
+Click letters can be produced using key sequences starting with \key|G-p|:
 
 \begin{itemize}[noitemsep]
-\item \out{ʘ} can be produced via \key|G-p @|
-\item \out{ǀ} can be produced via \key!G-p |!, \key|G-p \| or \key|G-p c|
-\item \out{ǃ} can be produced via \key|G-p !| or \key|G-p q|
-\item \out{ǂ} can be produced via \key|G-p =| or \key|G-p v|
-\item \out{ǁ} can be produced via \key|G-p x|
+\item \out{ʘ} can be produced using \key|G-p @|
+\item \out{ǀ} can be produced using \key!G-p |! or \key|G-p \| or \key|G-p c|
+\item \out{ǃ} can be produced using \key|G-p !| or \key|G-p q|
+\item \out{ǂ} can be produced using \key|G-p =| or \key|G-p v|
+\item \out{ǁ} can be produced using \key|G-p x|
 \end{itemize}
 
 \subsection{Greek letters}
@@ -609,7 +607,7 @@ These key sequences are shown in Table~\ref{tab:greek_letters}.
 \subsection{Superscripts and subscripts}
 \label{sec:superscripts-subscripts}
 
-Superscript letters and symbols can be typed using key sequences of the form \key|G-w <char>|,
+Superscript letters and symbols can be entered using key sequences of the form \key|G-w <char>|,
   where \key|<char>| is one of the following:
 \begin{itemize}[noitemsep]
 \item Any lowercase English letter other than \key|q|
@@ -619,19 +617,18 @@ Superscript letters and symbols can be typed using key sequences of the form \ke
 \end{itemize}
 For instance, a superscript \out{ʷ} can be produced by \key|G-w w|.
 
-Similarly, subscripts may be typed using key sequences of the form \key|G-W <char>|,
+Similarly, subscripts may be entered using key sequences of the form \key|G-W <char>|,
   where \key|<char>| is one of the following:
 \begin{itemize}[noitemsep]
 \item Any number
-\item A lowercase letter in the following list: \texttt{aehijklmnoprstuvx}
+\item Any lowercase letter in the following list: \texttt{aehijklmnoprstuvx}
 \item \key|+| or \key|-|
 \end{itemize}
 
 \subsection{Zhuang tone letters}
 \label{sec:zhuang_tones}
 
-Zhuang tone letters can be accessed via key sequences starting with \key|G-1|.
-The mappings are shown in Table~\ref{tab:zhuang_tones}.
+Zhuang tone letters can be accessed via key sequences starting with \key|G-1|, shown in Table~\ref{tab:zhuang_tones}.
 
 \begin{table}[t]
 \caption{Quotation marks and guillemots}
@@ -659,24 +656,22 @@ Second key & \keynv{G-' …} & \keynv{G-" …} \\
 \subsection{Quotation marks, guillemots and chevrons}
 \label{sec:quotation_marks_guillemots_chevrons}
 
-Quotation marks and guillemots can be typed using key sequences starting with
+Quotation marks, guillemots can be entered using key sequences starting with
   \key|G-'| (for single marks) and \key|G-"| (for double marks).
 These key sequences are listed in Table~\ref{tab:quotes_guillemots}.
-
-Although, strictly speaking, the chevrons \out{⟨} and \out{⟩} are brackets rather than quotes or guillemots,
-  Conkey allows these to be typed as well using \key|G-< G-<| and \key|G-> G->| respectively.
+For instance, \key|G-" )| produces the double quotation mark~\out{”}, and \key|G-' <| produces the single guillemot~\out{‹}.
+Additionally, the chevrons \out{⟨} and \out{⟩} may be entered using the key sequences \key|G-< G-<| and \key|G-> G->| respectively.
 
 \subsection{Dashes}
 \label{sec:dashes}
 
-Dashes can be produced using the \key|G--| dead key.
-\key|G-- m|, \key|G-- n|, \key|G-- -| and~\key|G-- =|
+Dashes can be produced using key sequences starting with \key|G--|.
+In particular \key|G-- m|, \key|G-- n|, \key|G-- -| and~\key|G-- =|
   produce an em~dash, en~dash, hyphen and minus~sign respectively.
 (Plain \key|-| produces a \textit{hyphen-minus},
-  an \textsc{ascii} symbol which can act as both a hyphen and a minus
-  but is not recommended in professionally-produced text.)
-This key may also be used to produce double~hyphens:
-\key|G-- S-=| produces a plain~double~hyphen \out{\tfb{⹀}}, and \key|G-- /| produces an oblique~double~hyphen \out{\tfb{⸗}}.
+  an \textsc{ascii} symbol which can act as both a hyphen and a minus.)
+It is also possible to enter double~hyphens:
+  \key|G-- S-=| produces a plain~double~hyphen \out{\tfb{⹀}}, and \key|G-- /| produces an oblique~double~hyphen \out{\tfb{⸗}}.
 
 \subsection{Dots}
 \label{sec:dots}
@@ -700,7 +695,7 @@ Various different kinds of dots can be produced using key sequences starting wit
 \centering
 \begin{tabular}{ll}
 \toprule
-Key sequence & Result \\
+Input & Result \\
 \midrule
 \key|G-!|     & ¡ \\
 \key|G-?|     & ¿ \\
@@ -780,10 +775,8 @@ These punctuation marks are listed in Table~\ref{tab:symbols_punctuation}.
 \subsection{Spaces}
 \label{sec:spaces}
 
-Conkey allows many different varieties of space to be produced via the \key|G-SPC| dead key
-  (i.e.\ AltGr+spacebar).
-The types of space which can be produced using this dead key,
-  along with their Unicode code points,
+Conkey allows many different varieties of space to be produced via key sequences starting with \key|G-SPC| (i.e.\ AltGr+spacebar).
+The types of space which can be produced using this dead key, along with their Unicode code points,
   are shown in Table~\ref{tab:spaces}.
 
 \begin{table}
@@ -881,7 +874,7 @@ In more detail, this dead key allows the production of:
 \item Unicode versions of Haskell syntax and operators (\out{\tfbs{∷}}, \out{\tfbs{⊕}}, \out{\tfbs{‼}} etc.)
 \item Blackboard bold letters (\out{\tfbs{ℝ}}, \out{\tfbs{ℕ}} etc.)
 \end{itemize}
-The key sequences for this dead key are shown in Table~\ref{tab:math}.
+The full list of key sequences is given in Table~\ref{tab:math}.
 
 \end{document}
 
