@@ -92,24 +92,27 @@ This guide uses a notation for key presses based on Emacs key notation:
 
 \begin{itemize}
 \item A single letter or symbol such as \key|l| or \key|-| means `press that key'. A special case is \key|SPC|, which means `press the Space bar'.
-\item \key|S-key| means `press Shift at the same time as \key|key|'.
+\item
+  An uppercase letter, or a symbol which is entered using the Shift key, means `press the appropriate key while holding Shift'.
+  For instance, \key|A| means `hold Shift while pressing \key|a|', and \key|!| means `hold Shift while pressing \key|1|'.
+\item \key|S-key| means `press Shift at the same time as \key|key|'\footnotemark.
 \item \key|G-key| means `press AltGr\footnote{The right Alt key} at the same time as \key|key|'.
 \item \key|key1 key2| means `press \key|key1|, then release it, then press \key|key2|'.
 \end{itemize}
 
-For instance, \key|G-S-- r| means `press AltGr+shift+\key|-| at the same time, then release it, then press \key|r|'.
+\footnotetext{%
+This particular piece of notation is a bit redundant (e.g.~\keynv{S-a} is the same as \keynv{A})
+  but is useful for making certain keys easier to remember:
+  for instance, the cedilla is \keynv{G-<}, but is slightly easier to remember as \keynv{G-S-,} (the comma looks like a cedilla).%
+Throughout this guide, the two notations will be used interchangeably.
+}
+
+For instance, \key|G-_ r| means `press AltGr+shift+\key|-| at the same time, then release it, then press \key|r|'.
 This key combination results in \out{ṟ} when used with Conkey.
 
 Note that Conkey is designed around the US keyboard layout, rather than the UK keyboard layout.
 For instance, \key|\| refers to the key next to \key|]|, rather than the key next to \key|z|.
 (For more details on the difference between the two keyboards, see \url{https://en.wikipedia.org/wiki/British_and_American_keyboards#Windows_keyboards}.)
-
-Also note that, although Conkey is designed to use as many mnemonics as possible,
-  this notation may sometimes obscure the mnemonicity of certain key sequences.
-For instance, it is not immediately obvious that \key|S-1| corresponds to \out{!},
-  which makes the mnemonic choice of \key|G-S-1| for \out{¡} less clear.
-This particular notation was chosen because it is consistent, easy to learn, and already familiar to many people,
-  but it does come at the cost of making such sequences less mnemonic.
 
 \section{Dead keys}
 \label{sec:dead_keys}
@@ -120,8 +123,8 @@ For instance, the dead key \key|G-'| adds an acute accent to the following lette
   so typing something like \key|G-' a| will generate the letter \out{á}.
 
 Conkey also uses some dead keys which modify the following letter with a hook or bar.
-For instance, the dead key \key|G-S-[| adds a hook to the following letter,
-  so typing something like \key|G-S-[ b| will generate the letter \out{ɓ}.
+For instance, the dead key \key|G-{| adds a hook to the following letter,
+  so typing something like \key|G-{ b| will generate the letter \out{ɓ}.
 
 Note that dead keys will typically only accept certain inputs,
   with unsupported inputs producing unspecified behaviour\footnotemark.
@@ -137,7 +140,7 @@ On Linux, this should just ignore the dead key.%
 
 To allow the input of punctuation and non-English letters, Conkey makes extensive use of \textit{key sequences}.
 This term refers to sequences of two keys which only produce one letter when typed.
-For instance, the left quote \out{‘} is produced by the key sequence \key|G-' S-(|, while the letter \out{ƣ} is produced by the key sequence \key|G-f g|.
+For instance, the left quote \out{‘} is produced by the key sequence \key|G-' (|, while the letter \out{ƣ} is produced by the key sequence \key|G-f g|.
 (Note that if you press an incorrect key sequence, you will either get no result or an incorrect output;
   it is fine to simply delete any incorrect output which you accidentally produced.)
 
@@ -148,8 +151,8 @@ Additionally, key sequences can have a mnemonic role: for instance, all key sequ
 When using key sequences to input letters, one important detail to be aware of is capitalisation.
 To capitalise a letter which is produced by a key sequence, the \textsc{shift} key should only be pressed for the last key in the sequence.
 For instance, the lowercase letter \out{ƣ} is produced by the key sequence \key|G-f g|,
-  while the capital letter \out{Ƣ} is produced by the key sequence \key|G-f S-g|,
-  rather than \key|G-S-f g| or \key|G-S-f S-g|.
+  while the capital letter \out{Ƣ} is produced by the key sequence \key|G-f G|,
+  rather than \key|G-F g| or \key|G-F S-G|.
 
 \section{Formatting conventions}
 \label{sec:formatting}
@@ -184,8 +187,8 @@ When this key or sequence is pressed, it produces the letter shown in the second
 For instance, pressing \key|G-a| results in \out{æ}.
 The third column, marked `Uppercase?', contains a check~mark if that letter corresponds to an uppercase letter,
   and a cross~mark if that letter does not correspond to any uppercase letter.
-For instance, pressing \key|G-d S-i| results in uppercase \out{Ɩ},
-  but pressing \key|G-d S-k| does not give any sensible output.
+For instance, pressing \key|G-d I| results in uppercase \out{Ɩ},
+  but pressing \key|G-d K| does not give any sensible output.
 (Recall that uppercase letters are typed by holding the \textsc{shift} key;
   for a key sequence, \textsc{shift} must only be held during the last key pressed.)
 The `Uppercase?' column may be missing for tables containing symbols (which do not have uppercases).
@@ -207,32 +210,32 @@ The `Uppercase?' column may be missing for tables containing symbols (which do n
 \toprule
 Input & Result \\
 \midrule
-\key|G-] S-\| & Vertical line above ◌̍ \\
+\key!G-] |!   & Vertical line above ◌̍ \\
 \key|G-] \|   & Vertical line below ◌̩ \\
-\key|G-] S-'| & Double vertical line above ◌̎ \\
+\key|G-] "|   & Double vertical line above ◌̎ \\
 \key|G-] ,|   & Comma above ◌̓ \\
-\key|G-] S-,| & Turned comma above ◌̒ \\
+\key|G-] <|   & Turned comma above ◌̒ \\
 \key|G-] .|   & Reversed comma above  ◌̔ \\
-\key|G-] S-.| & Comma above right ◌̕ \\
-\key|G-] S-8| & Dot above right ◌͘ \\
+\key|G-] >|   & Comma above right ◌̕ \\
+\key|G-] *|   & Dot above right ◌͘ \\
 \key|G-] `|   & Grave below ◌̖ \\
 \key|G-] S-`| & Acute below ◌̗ \\
 \midrule
-\key|G-] '| & Modifier apostrophe ◌ʼ \\
-\key|G-] p| & Modifier prime ◌ʹ \\
-\key|G-] S-p| & Modifier double prime ◌ʺ \\
-\key!G-] |! & Modifier vertical line ◌ˈ \\
-\key|G-] :| & Modifier colon ◌꞉ \\
-\key|G-] ;| & \makecell{Modifier triangular colon ◌ː\\(i.e.\ \textsc{ipa} length symbol)} \\
-\key|G-] =| & Modifier equals sign ◌꞊ \\
-\key|G-] -| & Modifier macron ◌ˉ \\
-\key|G-] S--| & Modifier low macron ◌ˍ \\
+\key|G-] '|   & Modifier apostrophe ◌ʼ \\
+\key|G-] p|   & Modifier prime ◌ʹ \\
+\key|G-] P|   & Modifier double prime ◌ʺ \\
+\key!G-] |!   & Modifier vertical line ◌ˈ \\
+\key|G-] :|   & Modifier colon ◌꞉ \\
+\key|G-] ;|   & \makecell{Modifier triangular colon ◌ː\\(i.e.\ \textsc{ipa} length symbol)} \\
+\key|G-] =|   & Modifier equals sign ◌꞊ \\
+\key|G-] -|   & Modifier macron ◌ˉ \\
+\key|G-] _|   & Modifier low macron ◌ˍ \\
 \key|G-] G-'| & Modifier acute accent ◌ˊ \\
 \key|G-] G-ˋ| & Modifier grave accent ◌ˋ \\
-\key|G-] )| & Modifier dot vertical bar ◌ꜗ \\
-\key|G-] /| & Modifier dot slash ◌ꜘ \\
+\key|G-] )|   & Modifier dot vertical bar ◌ꜗ \\
+\key|G-] /|   & Modifier dot slash ◌ꜘ \\
 \key|G-] G--| & Modifier dot horizontal bar ◌ꜙ \\
-\key|G-] S-]| & Modifier lower right corner ◌ꜚ \\
+\key|G-] }|   & Modifier lower right corner ◌ꜚ \\
 \key|G-] G-.| & \makecell{Sinological dot \tfb{◌ꞏ}\\(commonly used as half-colon\\length symbol)} \\
 \bottomrule
 \end{tabular}
@@ -250,7 +253,7 @@ Each column of the table contains information about the dead key on that row:
 
   This column is present because not all letters can be used with every diacritic,
     as Unicode does not contain precomposed characters for every base+diacritic combination.
-  For instance, \out{a̋} cannot be typed using \key|G-S-; a|, since that particular combination is not in Unicode.
+  For instance, \out{a̋} cannot be typed using \key|G-: a|, since that particular combination is not in Unicode.
 \item `Notes' contains any other information which may be relevant to that dead key.
 \end{itemize}
 For instance, the row for the `ring above' diacritic states that this diacritic is accessed via \key|G-8|,
@@ -261,7 +264,7 @@ Additionally, every one of the above dead keys can be used to insert the appropr
   for use in situations where there is no precomposed character.
 This can be produced by typing space (here denoted \key|SPC|) after the dead key.
 For instance, although there is no precomposed Unicode character for \out{a̋},
-  this may still be typed by first typing \key|a|, and then typing \key|G-S-; SPC| to produce the combining double acute accent.
+  this may still be typed by first typing \key|a|, and then typing \key|G-: SPC| to produce the combining double acute accent.
 
 
 \subsection{Combining diacritics and modifier letters}
@@ -289,23 +292,23 @@ Diacritic & Dead key & Acceptable inputs & Notes \\
 Acute ◌́            & \key|G-'|   & \ins{acegiklmnoprsuwyz}{ACEGIKLMNOPRSUWYZ}      &
   \key|G-' G-a|, \key|G-' G-A|, \key|G-' G-o|, \key|G-' G-O| produce \out{ǽ}, \out{Ǽ}, \out{ǿ}, \out{Ǿ} respectively. \newline
   Note that this dead key is also used for single quotes and guillemots. \\
-Diaeresis/umlaut ◌̈ & \key|G-S-'| & \ins{aehiotuwxy}{AEHIOUWXY}                     & Note that this dead key is also used for double quotes and guillemots. \\
+Diaeresis/umlaut ◌̈ & \key|G-"|   & \ins{aehiotuwxy}{AEHIOUWXY}                     & Note that this dead key is also used for double quotes and guillemots. \\
 Diaeresis below ◌̤  & \key|G-3|   & \ins*{u}{U}                                     & \\
-Double acute ◌̋     & \key|G-S-;| & \ins*{ou}{OU}                                   & \\
+Double acute ◌̋     & \key|G-:|   & \ins*{ou}{OU}                                   & \\
 Grave ◌̀            & \key|G-`|   & \ins{aeinouwy}{AEINOUWY}                        & \\
-Tilde ◌̃            & \key|G-S-`| & \ins{aeinouvy}{AEINOUVY}                        & \\
-Tilde below ◌̰      & \key|G-S-3| & \ins*{elu}{elU}                                 & \\
+Tilde ◌̃            & \key|G-~|   & \ins{aeinouvy}{AEINOUVY}                        & \\
+Tilde below ◌̰      & \key|G-#|   & \ins*{elu}{elU}                                 & \\
 Caron ◌̌            & \key|G-5|   & \ins{acdeghijklnorstuz}{ACDEGHIKLNORSTUZ}       & \key|G-5 G-z| and \key|G-5 G-Z| produce \out{ǯ} and \out{Ǯ} respectively. \\
 Circumflex ◌̂       & \key|G-6|   & \ins{aceghijosuwyz}{ACEGHIJOSUWYZ}              & \\
 Circumflex below ◌̭ & \key|G-7|   & \ins*{delntu}{DELNTU}                           & \\
 Ring above ◌̊       & \key|G-8|   & \ins*{auwy}{AU}                                 & \\
 Breve ◌̆            & \key|G-9|   & \ins*{aegiou}{AEGIOU}                           & \\
 Hook above ◌̉       & \key|G-0|   & \ins*{aeiouy}{AEIOUY}                           & \\
-Horn ◌̛             & \key|G-S-0| & \ins*{ou}{OU}                                   & \\
+Horn ◌̛             & \key|G-)|   & \ins*{ou}{OU}                                   & \\
 Macron ◌̄           & \key|G--|   & \ins{aegiouy}{AEGIOUY}                          &
   \key|G-- G-a| and \key|G-- G-A| produce \out{ǣ} and \out{Ǣ} respectively. \newline
   Note that this dead key is also used for dashes. \\
-Line below ◌̱       & \key|G-S--| & \ins{bdhklnrtz}{BDKLNRTZ}                       & \\
+Line below ◌̱       & \key|G-_|   & \ins{bdhklnrtz}{BDKLNRTZ}                       & \\
 Dot below ◌̣        & \key|G-.|   & \ins{abdehiklmnorstuvwyz}{ABDEHIKLMNORSTUVWYZ}  & Note that this dead key is also used for various dot symbols. \\
 Dot above ◌̇        & \key|G-S-.| & \ins{abcdefghmnoprstwxyz}{ABCDEFGHIMNOPRSTWXYZ} & Note that due to its position on this keyboard, this dead key is also used to type chevron brackets. \\
 Ogonek ◌̨           & \key|G-[|   & \ins*{aeiou}{AEIOU}                             & \\
@@ -323,7 +326,7 @@ Cedilla ◌̧          & \key|G-S-,| & \ins{cdeghklnrst}{CDEGHKLNRST}           
 \centerfloat
 \begin{minipage}{0.16\paperwidth}
 \centering
-\cprotect\caption{Letters with hooks: mappings for \key|G-S-[| dead key}
+\caption{Letters with hooks: mappings for \keynv{G-\{} dead key}
 \label{tab:hook_mappings}
 \begin{tabular}{lll}
 \toprule
@@ -350,14 +353,14 @@ Input & Result & Uppercase? \\
 \end{minipage}\hfill
 \begin{minipage}{0.55\paperwidth}
 \centering
-\cprotect\caption{Letters with bars: mappings for \key|G-\| and \key|G-S-\| dead keys}
+\cprotect\caption{Letters with bars: mappings for \key|G-\| and \key!G-|! dead keys}
 \label{tab:bar_mappings}
 \begin{tabular}{lllll}
 \toprule
 Input
  & \makecell{Result\\(\keynv{G-\textbackslash})}
  & Uppercase?
- & \makecell{Result\\(\keynv{G-S-\textbackslash})}
+ & \makecell{Result\\(\keynv{G-|})}
  & Uppercase? \\
 \midrule
 \key|a|   & ⱥ & \cmark &   & \\
@@ -397,8 +400,8 @@ Such diacritics can be typed using the dead key \key|G-2|:
 \item \key|G-2 G-9| yields the double inverted breve below \out{◌͜◌}
 \item \key|G-2 G-0| yields the double inverted breve above \out{◌͝◌}
 \item \key|G-2 G--| yields the double macron above \out{◌͞◌}
-\item \key|G-2 S--| yields the double macron below \out{◌͟◌}
-\item \key|G-2 S-`| yields the double tilde above \out{◌͠◌}
+\item \key|G-2 _| yields the double macron below \out{◌͟◌}
+\item \key|G-2 ~| yields the double tilde above \out{◌͠◌}
 \item \key|G-2 G-6| yields the double tie above \out{◌͡◌}
 \end{itemize}
 
@@ -411,13 +414,13 @@ These diacritics must be typed between the two individual letters they span;
 Certain letters are treated in Conkey as if they contain a diacritic,
   despite the fact that the `diacritic' is joined to the base letter and does not have a fixed location.
 These include letters with hooks (e.g.\ \out{ɓ} and \out{ƒ}) and bars (e.g.\ \out{ð} and \out{ʉ}).
-Hooks are produced via the \key|G-S-[| dead key, with mappings as in Table~\ref{tab:hook_mappings},
-  while bars are produced via the \key|G-\| and \key|G-S-\| dead keys, with mappings as in Table~\ref{tab:bar_mappings}.
+Hooks are produced via the \key|G-{| dead key, with mappings as in Table~\ref{tab:hook_mappings},
+  while bars are produced via the \key|G-\| and \key!G-|! dead keys, with mappings as in Table~\ref{tab:bar_mappings}.
 (Two dead keys are necessary for bars as some barred characters have two variations.)
 
 Conkey also includes four combining diacritics for bars.
 \out{◌̵} and \out{◌̷} are produced by \key|C-\ SPC| and \key|C-\ \| respectively,
-  while the longer bars \out{◌̶} and \out{◌̸} are produced by \key|C-S-\ SPC| and \key|C-S-\ \| respectively.
+  while the longer bars \out{◌̶} and \out{◌̸} are produced by \key!C-| SPC! and \key!C-| \! respectively.
 
 \section{Letters}
 \label{sec:letters}
@@ -453,7 +456,7 @@ Input & Result & Uppercase? \\
 \key|G-c| & ʕ & \xmark \\
 \key|G-q| & ɂ & \cmark \\
 \key|G-b| & ꞌ & \cmark \\
-\key|G-S-s| & ʻ & \xmark \\
+\key|G-X| & ʻ & \xmark \\
 \bottomrule
 \end{tabular}
 \end{minipage}\hfill
@@ -534,7 +537,7 @@ These letters may be accessed using one-~and two-key sequences as follows:
 
 % Since there is not enough space on the keyboard to include every Latin-script letter,
 %   two dead keys are also used, which map keystrokes to (semi-arbitrary-chosen) other letters.
-% For instance, \key|G-l g| returns \out{ƣ}, and \key|G-l S-'| returns \out{Ꜣ}.
+% For instance, \key|G-l g| returns \out{ƣ}, and \key|G-l "| returns \out{Ꜣ}.
 % The main dead key used for this purpose is \key|G-l|;
 %   its mappings are shown in Table~\ref{tab:g-l_mappings}.
 % There are also a small number of letters which are produced via the dead key \key|G-o|;
@@ -547,9 +550,9 @@ Click letters can be produced using the key sequences starting with \key|G-p|.
 For convenience, there are several ways of producing each click letter:
 
 \begin{itemize}[noitemsep]
-\item \out{ʘ} can be produced via \key|G-p S-2|
-\item \out{ǀ} can be produced via \key|G-p S-\|, \key|G-p \| or \key|G-p c|
-\item \out{ǃ} can be produced via \key|G-p S-1| or \key|G-p q|
+\item \out{ʘ} can be produced via \key|G-p @|
+\item \out{ǀ} can be produced via \key!G-p |!, \key|G-p \| or \key|G-p c|
+\item \out{ǃ} can be produced via \key|G-p !| or \key|G-p q|
 \item \out{ǂ} can be produced via \key|G-p =| or \key|G-p v|
 \item \out{ǁ} can be produced via \key|G-p x|
 \end{itemize}
@@ -610,13 +613,13 @@ Superscript letters and symbols can be typed using key sequences of the form \ke
   where \key|<char>| is one of the following:
 \begin{itemize}[noitemsep]
 \item Any lowercase English letter other than \key|q|
-\item Any uppercase English letter other than \key|S-c|, \key|S-f|, \key|S-q|, \key|S-s|, \key|S-x|, \key|S-y| or \key|S-z|
+\item Any uppercase English letter other than \key|C|, \key|F|, \key|Q|, \key|S|, \key|X|, \key|Y| or \key|Z|
 \item Any number
 \item \key|+|, \key|-| or \key|G-j| (which produces a superscript \out{ᶿ})
 \end{itemize}
 For instance, a superscript \out{ʷ} can be produced by \key|G-w w|.
 
-Similarly, subscripts may be typed using key sequences of the form \key|G-S-w <char>|,
+Similarly, subscripts may be typed using key sequences of the form \key|G-W <char>|,
   where \key|<char>| is one of the following:
 \begin{itemize}[noitemsep]
 \item Any number
@@ -638,14 +641,14 @@ The mappings are shown in Table~\ref{tab:zhuang_tones}.
 \toprule
 & \multicolumn{2}{c}{First key} \\
 \cmidrule(l){2-3}
-Second key & \keynv{G-' …} & \keynv{G-S-' …} \\
+Second key & \keynv{G-' …} & \keynv{G-" …} \\
 \midrule
-\keynv{… S-9} & ‘ & “ \\
-\keynv{… S-0} & ’ & ” \\
-\keynv{… ,}   & ‚ & „ \\
-\keynv{… .}   & ‛ & ‟ \\
-\keynv{… S-,} & ‹ & « \\
-\keynv{… S-.} & › & » \\
+\keynv{… (} & ‘ & “ \\
+\keynv{… )} & ’ & ” \\
+\keynv{… ,} & ‚ & „ \\
+\keynv{… .} & ‛ & ‟ \\
+\keynv{… <} & ‹ & « \\
+\keynv{… >} & › & » \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -661,7 +664,7 @@ Quotation marks and guillemots can be typed using key sequences starting with
 These key sequences are listed in Table~\ref{tab:quotes_guillemots}.
 
 Although, strictly speaking, the chevrons \out{⟨} and \out{⟩} are brackets rather than quotes or guillemots,
-  Conkey allows these to be typed as well using \key|G-S-, G-S-,| and \key|G-S-. G-S-.| respectively.
+  Conkey allows these to be typed as well using \key|G-< G-<| and \key|G-> G->| respectively.
 
 \subsection{Dashes}
 \label{sec:dashes}
@@ -682,10 +685,10 @@ Various different kinds of dots can be produced using key sequences starting wit
 
 \begin{itemize}[noitemsep]
 \item \key|G-. .| produces an ellipsis \out{…}
-\item \key|G-. S-\| produces a middot or interpunct \out{·}
-\item \key|G-. S-0| produces a bullet point \out{•}
+\item \key!G-. |! produces a middot or interpunct \out{·}
+\item \key|G-. )| produces a bullet point \out{•}
 \item \key|G-. 0| produces a degree sign \out{°}
-\item \key|G-. S-2| produces a diacritic carrier sign \out{◌}
+\item \key|G-. @| produces a diacritic carrier sign \out{◌}
   (used as a base to display diacritics, as in Table~\ref{tab:dk_for_diacritics})
 \end{itemize}
 
@@ -699,37 +702,37 @@ Various different kinds of dots can be produced using key sequences starting wit
 \toprule
 Key sequence & Result \\
 \midrule
-\key|G-S-1|                    & ¡ \\
-\key|G-S-/|                    & ¿ \\
-\key|G-S-2 S-1|                & \tfb{‽} \\
-\key|G-S-2 S-n|                & № \\
-\key|G-S-2 s|                  & § \\
-\key|G-S-2 1|                  & † \\
-\key|G-S-2 2|                  & ‡ \\
-\key|G-S-2 S-\|                & ‖ \\
+\key|G-!|     & ¡ \\
+\key|G-?|     & ¿ \\
+\key|G-@ !|   & \tfb{‽} \\
+\key|G-@ N|   & № \\
+\key|G-@ s|   & § \\
+\key|G-@ 1|   & † \\
+\key|G-@ 2|   & ‡ \\
+\key!G-@ |!   & ‖ \\
 \midrule
-\key|G-S-2 S-c|                & © \\
-\key|G-S-2 S-p|                & ℗ \\
-\key|G-S-2 S-r|                & ® \\
-\key|G-S-2 G-s|                & \tfb{℠} \\
-\key|G-S-2 S-t|                & ™ \\
+\key|G-@ C|   & © \\
+\key|G-@ P|   & ℗ \\
+\key|G-@ R|   & ® \\
+\key|G-@ G-s| & \tfb{℠} \\
+\key|G-@ T|   & ™ \\
 \midrule
-\key|G-S-2 y|                  & \tfbs{✓} \\
-\key|G-S-2 n|                  & \tfbs{✗} \\
-\key|G-S-2 G-S-y|              & \tfbs{✔} \\
-\key|G-S-2 G-S-n|              & \tfbs{✘} \\
-\key|G-S-2 0|                  & \tfbs{☐} \\
-\key|G-S-2 G-y|                & \tfbs{☑} \\
-\key|G-S-2 G-n|                & \tfbs{☒} \\
+\key|G-@ y|   & \tfbs{✓} \\
+\key|G-@ n|   & \tfbs{✗} \\
+\key|G-@ G-Y| & \tfbs{✔} \\
+\key|G-@ G-N| & \tfbs{✘} \\
+\key|G-@ 0|   & \tfbs{☐} \\
+\key|G-@ G-y| & \tfbs{☑} \\
+\key|G-@ G-n| & \tfbs{☒} \\
 \midrule
-\key|G-S-2 c|                  & c (i.e.\ cent symbol) \\
-\key|G-S-2 G-c|                & ¢ \\
-\key|G-S-2 e|                  & € \\
-\makecell{\keynv{G-S-2 l}\\\quad or \keynv{G-S-2 S-3}} & £ \\
-\key|G-S-2 o|                  & ¤ \\
-\key|G-S-2 r|                  & ₹ \\
-\key|G-S-2 S-s|                & ₪ \\
-\key|G-S-2 S-y|                & ¥ \\
+\key|G-@ c|   & c (i.e.\ cent symbol) \\
+\key|G-@ G-c| & ¢ \\
+\key|G-@ e|   & € \\
+% \makecell{\keynv{G-@ l}\\\quad or \keynv{G-@ #}} & £ \\
+\key|G-@ o|   & ¤ \\
+\key|G-@ r|   & ₹ \\
+\key|G-@ S|   & ₪ \\
+\key|G-@ Y|   & ¥ \\
 \bottomrule
 \end{tabular}
 \end{minipage}\hfill
@@ -741,23 +744,23 @@ Key sequence & Result \\
 \toprule
 Input     & Space produced                      & Code point \\
 \midrule
-\key|G-SPC t|   & Tab                                 & \uni{U+0009} \\
-\key|G-SPC ~|   & Non-breaking space                  & \uni{U+00a0} \\
-\key|G-SPC n|   & En space                            & \uni{U+2002} \\
-\key|G-SPC m|   & Em space                            & \uni{U+2003} \\
-\key|G-SPC b|   & Three-per-em space                  & \uni{U+2004} \\
-\key|G-SPC v|   & Four-per-em space                   & \uni{U+2005} \\
-\key|G-SPC c|   & Six-per-em space                    & \uni{U+2006} \\
-\key|G-SPC 1|   & Figure space                        & \uni{U+2007} \\
-\key|G-SPC .|   & Punctuation space                   & \uni{U+2008} \\
-\key|G-SPC ,|   & Thin space                          & \uni{U+2009} \\
-\key|G-SPC S-\| & Hair space                          & \uni{U+200a} \\
-\key|G-SPC S-=| & Medium mathematical space           & \uni{U+205f} \\
-\key|G-SPC S-1| & Narrow no-break space               & \uni{U+202f} \\
-\key|G-SPC 0|   & Zero width space                    & \uni{U+200b} \\
-\key|G-SPC S-9| & Zero width non-joiner               & \uni{U+200c} \\
-\key|G-SPC S-0| & Zero width joiner                   & \uni{U+200d} \\
-\key|G-SPC [|   & Open box \out{␣} (symbol for space) & \uni{U+2423} \\
+\key|G-SPC t| & Tab                                 & \uni{U+0009} \\
+\key|G-SPC ~| & Non-breaking space                  & \uni{U+00a0} \\
+\key|G-SPC n| & En space                            & \uni{U+2002} \\
+\key|G-SPC m| & Em space                            & \uni{U+2003} \\
+\key|G-SPC b| & Three-per-em space                  & \uni{U+2004} \\
+\key|G-SPC v| & Four-per-em space                   & \uni{U+2005} \\
+\key|G-SPC c| & Six-per-em space                    & \uni{U+2006} \\
+\key|G-SPC 1| & Figure space                        & \uni{U+2007} \\
+\key|G-SPC .| & Punctuation space                   & \uni{U+2008} \\
+\key|G-SPC ,| & Thin space                          & \uni{U+2009} \\
+\key!G-SPC |! & Hair space                          & \uni{U+200a} \\
+\key|G-SPC +| & Medium mathematical space           & \uni{U+205f} \\
+\key|G-SPC !| & Narrow no-break space               & \uni{U+202f} \\
+\key|G-SPC 0| & Zero width space                    & \uni{U+200b} \\
+\key|G-SPC (| & Zero width non-joiner               & \uni{U+200c} \\
+\key|G-SPC )| & Zero width joiner                   & \uni{U+200d} \\
+\key|G-SPC [| & Open box \out{␣} (symbol for space) & \uni{U+2423} \\
 \key|G-SPC ]|
   & \makecell{Shouldered open box \out{\tfbs{⍽}}\\\quad(symbol for non-breaking space)}
   & \uni{U+237d} \\
@@ -771,7 +774,7 @@ Input     & Space produced                      & Code point \\
 
 Aside from the punctuation marks already covered above,
   Conkey can produce a wide variety of other punctuation marks and symbols,
-  mostly via key sequences starting with \key|G-S-2|.
+  mostly via key sequences starting with \key|G-@|.
 These punctuation marks are listed in Table~\ref{tab:symbols_punctuation}.
 
 \subsection{Spaces}
@@ -826,32 +829,32 @@ Input & \multicolumn{1}{l}{Result} \\
 \toprule
 Input & \multicolumn{1}{l}{Result} & Input & \multicolumn{1}{l}{Result} \\
 \midrule
-\key|G-= x|     & × & \key|G-= S-[| & ⊆ \\
-\key|G-= '|     & ⋅ & \key|G-= S-]| & ⊇ \\
-\key|G-= /|     & ÷ & \key|G-= \|   & ∖ \\
-\key|G-= -|     & ± & \key|G-= S-;| & ∷ \\
-\key|G-= s|     & √ & \key|G-= S-8| & ★ \\
-\key|G-= =|     & ≡ & \key|G-= b|   & ⊥ \\
-\key|G-= S-1|   & ≠ & \key|G-= S-9| & ⦇ \\
-\key|G-= G-S-1| & ≢ & \key|G-= S-0| & ⦈ \\
-\key|G-= x|     & ≈ & \key|G-= [|   & ⟦ \\
-\key|G-= S-,|   & ≤ & \key|G-= ]|   & ⟧ \\
-\key|G-= S-.|   & ≥ & \key|G-= f|   & ≫ \\
-\key|G-= S-5|   & ‰ & \key|G-= d|   & ≪ \\
-\key|G-= 1|     & ′ & \key|G-= h|   & ⋙ \\
-\key|G-= 2|     & ″ & \key|G-= g|   & ⋘ \\
-\key|G-= 3|     & ‴ & \key|G-= 8|   & ⁂ \\
-\key|G-= .|     & ∘ & \key|G-= S-\| & ⫴ \\
-\key|G-= S-a|   & ∀ & \key|G-= S-3| & ⧻ \\
-\key|G-= S-`|   & ¬ & \key|G-= S-=| & ⧺ \\
-\key|G-= S-6|   & ∧ & \key|G-= i|   & ‼ \\
-\key|G-= v|     & ∨ & \key|G-= S-2| & ⊛ \\
-\key|G-= S-7|   & ∴ & \key|G-= a|   & ⊕ \\
-\key|G-= 0|     & ∅ & \key|G-= S-c| & ℂ \\
-\key|G-= e|     & ∈ & \key|G-= S-n| & ℕ \\
-\key|G-= S-e|   & ∉ & \key|G-= S-q| & ℚ \\
-\key|G-= S-u|   & ∪ & \key|G-= S-r| & ℝ \\
-\key|G-= S-i|   & ∩ & \key|G-= S-z| & ℤ \\
+\key|G-= x|   & × & \key|G-= {| & ⊆ \\
+\key|G-= '|   & ⋅ & \key|G-= }| & ⊇ \\
+\key|G-= /|   & ÷ & \key|G-= \| & ∖ \\
+\key|G-= -|   & ± & \key|G-= :| & ∷ \\
+\key|G-= s|   & √ & \key|G-= *| & ★ \\
+\key|G-= =|   & ≡ & \key|G-= b| & ⊥ \\
+\key|G-= !|   & ≠ & \key|G-= (| & ⦇ \\
+\key|G-= G-!| & ≢ & \key|G-= )| & ⦈ \\
+\key|G-= x|   & ≈ & \key|G-= [| & ⟦ \\
+\key|G-= <|   & ≤ & \key|G-= ]| & ⟧ \\
+\key|G-= >|   & ≥ & \key|G-= f| & ≫ \\
+\key|G-= %|   & ‰ & \key|G-= d| & ≪ \\
+\key|G-= 1|   & ′ & \key|G-= h| & ⋙ \\
+\key|G-= 2|   & ″ & \key|G-= g| & ⋘ \\
+\key|G-= 3|   & ‴ & \key|G-= 8| & ⁂ \\
+\key|G-= .|   & ∘ & \key!G-= |! & ⫴ \\
+\key|G-= A|   & ∀ & \key|G-= #| & ⧻ \\
+\key|G-= ~|   & ¬ & \key|G-= +| & ⧺ \\
+\key|G-= ^|   & ∧ & \key|G-= i| & ‼ \\
+\key|G-= v|   & ∨ & \key|G-= @| & ⊛ \\
+\key|G-= &|   & ∴ & \key|G-= a| & ⊕ \\
+\key|G-= 0|   & ∅ & \key|G-= C| & ℂ \\
+\key|G-= e|   & ∈ & \key|G-= N| & ℕ \\
+\key|G-= E|   & ∉ & \key|G-= Q| & ℚ \\
+\key|G-= U|   & ∪ & \key|G-= R| & ℝ \\
+\key|G-= I|   & ∩ & \key|G-= Z| & ℤ \\
 \bottomrule
 \end{tabular}
 \end{minipage}
