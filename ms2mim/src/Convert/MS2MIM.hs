@@ -33,11 +33,12 @@ convertWithMetadata MS.Metadata{..} im = Mim.InputMethod
     }
 
 getRules :: Intermediate -> [Mim.Rule]
-getRules = fmap getRule . filter filterSeqs
+getRules = mapMaybe getRule . filter filterSeqs
   where
-    getRule (ks, c) = Mim.Rule
-        (Mim.KeySeq $ mapMaybe (fmap Left . uncurry composeFromVk) ks) 
-        [Mim.ActInsert $ Mim.InsInt $ ord c]
+    getRule (ks, c) =
+        case traverse (fmap Left . uncurry composeFromVk) ks of
+            Just ks' -> Just $ Mim.Rule (Mim.KeySeq ks') [Mim.ActInsert $ Mim.InsInt $ ord c]
+            Nothing  -> Nothing
 
     -- Remove unwanted key sequences
     filterSeqs ([(MS.Ctrl, MS.Oem4)], _) = False
