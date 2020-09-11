@@ -4,15 +4,17 @@
 module Convert.MS2MIM where
 
 import Data.Char (toLower, toUpper, ord)
-import qualified Data.Map.Strict as Map
+import Data.Maybe (mapMaybe)
+
 import Data.Text (Text)
 import qualified Data.Text as T
 
 import qualified MSKLC.Keyboard as MS
 import qualified M17N.Keyboard as Mim
+import Convert.Intermediate (Intermediate)
 
-convert :: MS.Keyboard -> Mim.InputMethod
-convert (MS.Keyboard MS.Metadata{..} l) = Mim.InputMethod
+convertWithMetadata :: MS.Metadata -> Intermediate -> Mim.InputMethod
+convertWithMetadata MS.Metadata{..} im = Mim.InputMethod
     { imDeclaration = Just Mim.ImDeclaration
         { dclLanguage = "t"  -- don't bother converting language
         , dclName = kbdName
@@ -25,25 +27,18 @@ convert (MS.Keyboard MS.Metadata{..} l) = Mim.InputMethod
     , imCommandList = Nothing
     , imModuleList = Nothing
     , imMacroList = Nothing
-    , imMapList = Just $ Mim.MapList Nothing [("simple", getRules l)]
+    , imMapList = Just $ Mim.MapList Nothing [("simple", getRules im)]
     , imStateList = Just $ Mim.StateList Nothing
         [Mim.State "init" Nothing [Mim.MapBranch "simple" []]] Nothing
     }
 
-getRules :: MS.Layout -> [Mim.Rule]
-getRules = concatMap (\(vk, assign) -> Map.assocs assign >>= getRule vk) . Map.assocs
+getRules :: Intermediate -> [Mim.Rule]
+getRules = fmap getRule
   where
-    getRule :: MS.VkCode -> (MS.ShiftState, MS.Entry) -> [Mim.Rule]
-    getRule _ (_, MS.Unassigned) = []
-    getRule vk (ss, MS.Entry c) = case composeFromVk ss vk of
-        Nothing -> []
-        Just keyname -> [Mim.Rule (Mim.KeySeq [Left keyname]) [Mim.ActInsert $ Mim.InsInt $ ord c]]
-    getRule vk (ss, MS.DeadKey (MS.DeadKeyDesc base mapping)) = case composeFromVk ss vk of
-        Nothing -> []
-        Just keyname ->
-            flip fmap (Map.assocs mapping) $ \(i, o) ->
-                Mim.Rule (Mim.KeySeq [Left keyname, Right $ ord i]) [Mim.ActInsert $ Mim.InsInt $ ord o]
-    
+    getRule (ks, c) = Mim.Rule
+        (Mim.KeySeq $ mapMaybe (fmap Left . uncurry composeFromVk) ks) 
+        [Mim.ActInsert $ Mim.InsInt $ ord c]
+
 composeFromVk :: MS.ShiftState -> MS.VkCode -> Maybe Mim.Symbol
 composeFromVk ss vk =
     let explicitShift = (vk == MS.VkSpace)

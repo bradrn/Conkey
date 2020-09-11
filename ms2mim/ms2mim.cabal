@@ -20,6 +20,8 @@ library
                      , MSKLC.Parser
                      , M17N.Keyboard
                      , M17N.Print
+                     , Intermediate.Print
+                     , Convert.Intermediate
                      , Convert.MS2MIM
   build-depends:       base >= 4.7 && < 5
                      , text

@@ -114,7 +114,7 @@ Use the following commands:
 ```
 $ cd ms2mim
 $ stack build
-$ stack exec -- ms2mim ../Conkey.klc ../latn-conk.mim
+$ stack exec -- ms2mim ../Conkey.klc ../latn-conk.mim --mim
 ```
 
 This should generate a file `latn-conk.mim` for use in Linux.
