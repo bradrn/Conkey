@@ -33,11 +33,15 @@ convertWithMetadata MS.Metadata{..} im = Mim.InputMethod
     }
 
 getRules :: Intermediate -> [Mim.Rule]
-getRules = fmap getRule
+getRules = fmap getRule . filter filterSeqs
   where
     getRule (ks, c) = Mim.Rule
         (Mim.KeySeq $ mapMaybe (fmap Left . uncurry composeFromVk) ks) 
         [Mim.ActInsert $ Mim.InsInt $ ord c]
+
+    -- Remove unwanted key sequences
+    filterSeqs ([(MS.Ctrl, MS.Oem4)], _) = False
+    filterSeqs _ = True
 
 composeFromVk :: MS.ShiftState -> MS.VkCode -> Maybe Mim.Symbol
 composeFromVk ss vk =
