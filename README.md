@@ -72,16 +72,16 @@ A Mac ~~or Linux version~~ is not planned; however, anyone interested is welcome
 Install Conkey using the files from the [latest release](https://github.com/bradrn/Conkey/releases/latest).
 Alternately, get the files by [building Conkey yourself](#building).
 
-## Windows
+### Windows
 
 Install by unzipping `installer.zip` and running the `setup.exe` file within.
 If you already have a previous version of Conkey installed,
   it may be a good idea to uninstall that first using the Control Panel.
 
-## Linux
+### Linux
 
-(Special thanks go to all the members of the [ZBB board](https://www.verduria.org/) for all their help in getting the Ubuntu version to work!
-I don’t think I could have ported Conkey to Ubuntu without your help.)
+(Special thanks go to all the members of the [ZBB board](https://www.verduria.org/) for all their help in getting this version to work!
+I don’t think I could have ported Conkey to Linux without your help.)
 
 Conkey for Linux is distributed as a `.mim` file, for use with the M17N library.
 It has been tested with Ubuntu and IBus, but should work on other systems as well.
