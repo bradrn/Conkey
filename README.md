@@ -78,13 +78,12 @@ Install by unzipping `installer.zip` and running the `setup.exe` file within.
 If you already have a previous version of Conkey installed,
   it may be a good idea to uninstall that first using the Control Panel.
 
-### Linux
+### Linux (M17N)
 
 (Special thanks go to all the members of the [ZBB board](https://www.verduria.org/) for all their help in getting this version to work!
 I don’t think I could have ported Conkey to Linux without your help.)
 
 Conkey for Linux is distributed as a `.mim` file, for use with the M17N library.
-It has been tested with Ubuntu and IBus, but should work on other systems as well.
 
 The following installation instructions have been tested with Ubuntu:
 
@@ -103,18 +102,25 @@ To build the keyboard, use the `Project → Build DLL and Setup Package` menu it
 (Note that I find I have to uninstall Conkey before I can run this, since otherwise I get an error.)
 This should create a `setup.exe` executable plus a number of other files.
 
-### Linux
+### Linux (M17N)
 
-As mentioned above, Conkey is developed on Windows, using MSKLC.
-However, this repository contains a Haskell program `ms2mim`,
-  which converts a MSKLC file to a `.mim` file for use with M17N.
-The [Haskell Stack](https://docs.haskellstack.org/en/stable/README/) is recommended for building this program.
-Use the following commands:
+Conkey can be used on Linux utilising the M17N library.
+A `.mim` file for use with this library can be generated
+  using the `ms2mim` program, included with this repository.
+
+The [Haskell Stack](https://docs.haskellstack.org/en/stable/README/) is recommended for building `ms2mim`.
+The following commands can be used to build it:
 
 ```
 $ cd ms2mim
 $ stack build
-$ stack exec -- ms2mim ../Conkey.klc ../latn-conk.mim --mim
 ```
 
-This should generate a file `latn-conk.mim` for use in Linux.
+After it has been built the following command may then be used to generate a `latn-conk.mim` file
+  in the current directory:
+
+```
+$ stack exec -- ms2mim ../Conkey.klc latn-conk.mim --mim
+```
+
+This file may then be installed as per the instructions above.
