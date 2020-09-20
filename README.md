@@ -64,8 +64,10 @@ Conkey uses the [Microsoft Keyboard Layout Creator](https://support.microsoft.co
 This is highly recommended for any complex work on Conkey.
 However, if you want to make simple modifications only, the [keyboard layout description file](Conkey.klc) has a fairly simple plaintext format which can easily be modified.
 
-A Mac ~~or Linux version~~ is not planned; however, anyone interested is welcome to try porting Conkey to those platforms.  
-**There is now a Linux version!** Build it using the instructions below.
+A version for Linux is available. A Mac OSX version is not planned;
+  however, anyone interested is welcome to try porting Conkey to Mac OSX.
+
+**There is now a Mac OSX version!** Build and install it using the instructions below.
 
 ## Installation
 
@@ -92,6 +94,24 @@ The following installation instructions have been tested with Ubuntu:
 3. Download `latn-conk.mim` from the releases page, and copy it to `~/.m17n.d`.
 4. Run `ibus restart`.
 5. The new Conkey keyboard should now be available from the Settings page (under the `Other` language).
+
+### Mac OSX
+
+(Thanks go to @akamchinjir for providing the instructions below.)
+
+Conkey for Mac OSX is provided as a zipped `.bundle`.
+To install Conkey:
+
+1. Unzip the zipped directory.
+2. Copy the newly-unzipped `.bundle` directory into `~/Library/Keyboard Layouts`.
+3. Log out and then back in. The new keyboard should now be available in the System Keyboard Preferences dialog.
+
+The `~/Library` file may be hidden in Finder.
+You can still navigate to it by choosing “Go to Folder” in the “Go” menu and then entering `~/Library` directly.
+Or you can make it permanently visible by entering `chflags nohidden ~/Library` in the terminal.
+If the `~/Library` folder does not already contain a “Keyboard Layouts” folder, just create it.
+
+It should also work if you put the `.bundle` directory in `/System/Library`.
 
 ## Building
 
@@ -124,3 +144,21 @@ $ stack exec -- ms2mim ../Conkey.klc latn-conk.mim --mim
 ```
 
 This file may then be installed as per the instructions above.
+
+### Mac OSX
+
+To build Conkey for Mac OSX, first follow the instructions above to build `ms2mim`.
+Then run the following command:
+
+```
+$ stack exec -- ms2mim ../Conkey.klc conkey.in --int --osx
+```
+
+This will generate an intermediate file `conkey.in` in the current directory.
+To convert this intermediate file to a `.bundle` directory suitable for installation,
+  it is recommended to use [akamchinjir/osxkb](https://github.com/akamchinjir/osxkb).
+First download that repository, and build it using the [given instructions](https://github.com/akamchinjir/osxkb/blob/master/INSTALL).
+Next you will need to create a configuration file using the instructions in [the README](https://github.com/akamchinjir/osxkb).
+Ensure that the `datafile` field contains the path to the `conkey.in` intermediate file you created previously.
+Finally, run `osxkb path-to-the-configuration-file.conf`;
+  this will generate a `.bundle` directory which may be installed using the instructions above.
