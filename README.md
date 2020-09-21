@@ -160,5 +160,6 @@ To convert this intermediate file to a `.bundle` directory suitable for installa
 First download that repository, and build it using the [given instructions](https://github.com/akamchinjir/osxkb/blob/master/INSTALL).
 Next you will need to create a configuration file using the instructions in [the README](https://github.com/akamchinjir/osxkb).
 Ensure that the `datafile` field contains the path to the `conkey.in` intermediate file you created previously.
+Alternately, you may use the `conkey.config` file provided with this repository.
 Finally, run `osxkb path-to-the-configuration-file.conf`;
   this will generate a `.bundle` directory which may be installed using the instructions above.
