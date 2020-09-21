@@ -94,8 +94,8 @@ The following installation instructions have been tested with Ubuntu:
 
 1. Run `sudo apt install ibus-m17n` to install IBus and M17N.
 2. Make a new directory `~/.m17n.d` with `mkdir ~/.m17n.d`, if it does not already exist.
-3. Download `latn-conk.mim` from the releases page, and copy it to `~/.m17n.d`.
-4. Run `ibus restart`.
+3. Download `latn-conk.mim` from the releases page, and copy it to `~/.m17n.d`. (You will need to delete the previous version of Conkey if it is already installed.)
+4. Run `ibus restart`. You may also need to log out and back in, or reboot, particularly if you already have a previous version of Conkey installed.
 5. The new Conkey keyboard should now be available from the Settings page (under the `Other` language).
 
 ### Mac OSX
