@@ -69,6 +69,9 @@ A version for Linux is available. A Mac OSX version is not planned;
 
 **There is now a Mac OSX version!** Build and install it using the instructions below.
 
+If you are interested, ports of Conkey to other platforms would be welcomed;
+  refer to the instructions [here](https://github.com/bradrn/Conkey/blob/master/ms2mim/README.md) for details.
+
 ## Installation
 
 Install Conkey using the files from the [latest release](https://github.com/bradrn/Conkey/releases/latest).
