@@ -5,6 +5,9 @@ module M17N.Keyboard where
 import Data.Text (Text, pack)
 import Data.String (IsString)
 
+-- Note: for details on the data types in this module, refer to the
+-- M17N documentation at https://www.nongnu.org/m17n/manual-en/m17nDBFormat.html
+
 data InputMethod = InputMethod
     { imDeclaration :: Maybe ImDeclaration
     , imDescription :: Maybe Description

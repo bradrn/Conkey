@@ -1,7 +1,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE RecordWildCards   #-}
 
-module Convert.MS2MIM where
+module Convert.MS2MIM (convertWithMetadata) where
 
 import Data.Char (toLower, toUpper, ord)
 import Data.Maybe (mapMaybe)
@@ -13,6 +13,8 @@ import qualified MSKLC.Keyboard as MS
 import qualified M17N.Keyboard as Mim
 import Convert.Intermediate (Intermediate)
 
+-- | Given the appropriate 'MS.Metadata', convert an 'Intermediate'
+-- keyboard layout representation to an M17N 'Mim.InputMethod'.
 convertWithMetadata :: MS.Metadata -> Intermediate -> Mim.InputMethod
 convertWithMetadata MS.Metadata{..} im = Mim.InputMethod
     { imDeclaration = Just Mim.ImDeclaration

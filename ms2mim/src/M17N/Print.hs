@@ -10,6 +10,8 @@ import Data.Maybe (catMaybes, fromMaybe)
 import Data.Text (Text)
 import qualified Data.Text as T
 
+-- | Given an M17N 'InputMethod', render it to its 'Text'
+-- representation.
 render :: InputMethod -> Text
 render InputMethod{..} = T.intercalate "\n" $ catMaybes
     [ renderDeclaration  <$> imDeclaration

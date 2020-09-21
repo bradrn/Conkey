@@ -1,7 +1,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE ViewPatterns      #-}
 
-module Intermediate.Print where
+module Intermediate.Print (Mode(..), renderIntermediate) where
 
 import Data.Char (toLower, toUpper)
 import Data.Maybe (mapMaybe)
@@ -12,9 +12,15 @@ import qualified Data.Text as T
 import Convert.Intermediate (Intermediate)
 import qualified MSKLC.Keyboard as MS
 
+-- | The mode in which to render an 'Intermediate' representation:
+-- either unmodified, or with alterations as required for OSX. (Refer
+-- to the ms2mim README for more information.)
 data Mode = Unmodified | OSX
     deriving (Show, Eq)
 
+-- | Given the 'Mode' to render in, takes a keyboard layout as
+-- represented by an 'Intermediate', and renders it to its textual
+-- representation.
 renderIntermediate :: Mode -> Intermediate -> Text
 renderIntermediate mode = T.unlines . mapMaybe mkLine
   where
