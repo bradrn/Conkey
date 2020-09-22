@@ -550,10 +550,12 @@ These letters may be accessed using one-~and two-key sequences as follows:
   These letters are listed in Table~\ref{tab:letters_g-d}.
 \end{itemize}
 
+% this is needed in order to get all the floats on the right pages
+\clearpage
 \subsection{Click letters}
 \label{sec:clicks}
 
-\begin{wraptable}[20]{r}{5cm}
+\begin{wraptable}[22]{r}{5cm}
 \centering
 \caption{Greek letters}
 \label{tab:greek_letters}
@@ -636,10 +638,7 @@ Similarly, subscripts may be entered using key sequences of the form \key|G-W <c
 
 Zhuang tone letters can be accessed via key sequences starting with \key|G-1|, shown in Table~\ref{tab:zhuang_tones}.
 
-\section{Symbols}
-\label{sec:symbols}
-
-\begin{table}[t]
+\begin{table}[b]
 \centering
 \caption{Zhuang tone letters}
 \label{tab:zhuang_tones}
@@ -657,10 +656,7 @@ Input & Result & Uppercase? \\
 \end{tabular}
 \end{table}
 
-\subsection{Quotation marks, guillemots and chevrons}
-\label{sec:quotation_marks_guillemots_chevrons}
-
-\begin{table}[b]
+\begin{table}[t]
 \caption{Quotation marks and guillemots}
 \label{tab:quotes_guillemots}
 \centering
@@ -680,10 +676,16 @@ Second key & \keynv{G-' …} & \keynv{G-" …} \\
 \end{tabular}
 \end{table}
 
+\section{Symbols}
+\label{sec:symbols}
+
+\subsection{Quotation marks, guillemots and chevrons}
+\label{sec:quotation_marks_guillemots_chevrons}
+
 Quotation marks and guillemots can be entered using key sequences starting with
   \key|G-'| (for single marks) and \key|G-"| (for double marks).
 These key sequences are listed in Table~\ref{tab:quotes_guillemots}.
-For instance, \key|G-" )| produces the double quotation mark~\out{”}, and \key|G-' <| produces the single guillemot~\out{‹}.
+For instance, \key|G-" )| produces the double quotation mark~\out{”}, and \key|G-' <| produces the single~guillemot~\out{‹}.
 Additionally, the chevrons \out{⟨} and \out{⟩} may be entered using the key sequences \key|G-< G-<| and \key|G-> G->| respectively.
 
 \subsection{Dashes}
