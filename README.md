@@ -106,7 +106,7 @@ Conkey for Mac OSX is provided as a zipped `.bundle`.
 To install Conkey:
 
 1. Unzip the zipped directory.
-2. Copy the newly-unzipped `.bundle` directory into `~/Library/Keyboard Layouts`.
+2. Within the zip file, there should be a `Conkey.bundle` directory. Copy this directory into `~/Library/Keyboard Layouts`.
 3. Log out and then back in. The new keyboard should now be available in the System Keyboard Preferences dialog.
 
 The `~/Library` file may be hidden in Finder.
