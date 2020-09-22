@@ -28,7 +28,8 @@
 % Formatting for keys, when \verb is not available
 \newcommand{\keynv}{\texttt}
 % Formatting for characters produced by Conkey
-\newcommand{\out}[1]{\colorbox{gray!20}{\strut{}#1}}
+\newcommand{\out}[1]{\raisebox{0pt}[0pt][0pt]{\setlength{\fboxsep}{1pt}\colorbox{gray!20}{\strut{}#1}}}
+\newcommand{\outsp}[1]{\colorbox{gray!20}{\strut{}#1}}
 % Formatting for Unicode codepoint
 \newcommand{\uni}[1]{\texttt{#1}}
 \makeatletter
@@ -53,6 +54,7 @@
   \renewcommand*{\chapnumfont}{\chaptitlefont}
   \renewcommand*{\printchapternum}{\chapnumfont \thechapter\space}
   \renewcommand*{\afterchapternum}{}
+  \setlength\beforechapskip{-\baselineskip}
 }
 \chapterstyle{sectionsc}
 
@@ -402,12 +404,12 @@ Certain diacritics span two letters rather than one --- for example, the tie use
 Such diacritics may be entered using key sequences starting with \key|G-2|:
 
 \begin{itemize}[noitemsep]
-\item \key|G-2 G-9| yields the double inverted breve below \out{◌͜◌}
-\item \key|G-2 G-0| yields the double inverted breve above \out{◌͝◌}
-\item \key|G-2 G--| yields the double macron above \out{◌͞◌}
-\item \key|G-2 _| yields the double macron below \out{◌͟◌}
-\item \key|G-2 ~| yields the double tilde above \out{◌͠◌}
-\item \key|G-2 G-6| yields the double tie above \out{◌͡◌}
+\item \key|G-2 G-9| yields the double inverted breve below \outsp{◌͜◌}
+\item \key|G-2 G-0| yields the double inverted breve above \outsp{◌͝◌}
+\item \key|G-2 G--| yields the double macron above \outsp{◌͞◌}
+\item \key|G-2 _| yields the double macron below \outsp{◌͟◌}
+\item \key|G-2 ~| yields the double tilde above \outsp{◌͠◌}
+\item \key|G-2 G-6| yields the double tie above \outsp{◌͡◌}
 \end{itemize}
 
 These diacritics must be typed between the two individual letters they span;
@@ -591,15 +593,15 @@ Input & Result & Uppercase? \\
 Click letters can be produced using key sequences starting with \key|G-p|:
 
 \begin{itemize}[noitemsep]
-\item \out{ʘ} can be produced using \key|G-p @|
-\item \out{ǀ} can be produced using \key!G-p |! or \key|G-p \| or \key|G-p c|
-\item \out{ǃ} can be produced using \key|G-p !| or \key|G-p q|
-\item \out{ǂ} can be produced using \key|G-p =| or \key|G-p v|
-\item \out{ǁ} can be produced using \key|G-p x|
-\item \out{ʇ} can be produced using \key|G-p t|
-\item \out{ʖ} can be produced using \key|G-p s|
-\item \out{ʗ} can be produced using \key|G-p S-c|
-\item \out{ʞ} can be produced using \key|G-p k|
+\item \outsp{ʘ} can be produced using \key|G-p @|
+\item \outsp{ǀ} can be produced using \key!G-p |! or \key|G-p \| or \key|G-p c|
+\item \outsp{ǃ} can be produced using \key|G-p !| or \key|G-p q|
+\item \outsp{ǂ} can be produced using \key|G-p =| or \key|G-p v|
+\item \outsp{ǁ} can be produced using \key|G-p x|
+\item \outsp{ʇ} can be produced using \key|G-p t|
+\item \outsp{ʖ} can be produced using \key|G-p s|
+\item \outsp{ʗ} can be produced using \key|G-p S-c|
+\item \outsp{ʞ} can be produced using \key|G-p k|
 \end{itemize}
 
 \subsection{Greek letters}
