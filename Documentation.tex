@@ -96,16 +96,15 @@ This guide uses a notation for key presses based on Emacs key notation:
   An uppercase letter, or a symbol which is entered using the Shift key, means `press the appropriate key while holding Shift'.
   For instance, \key|A| means `hold Shift while pressing \key|a|', and \key|!| means `hold Shift while pressing \key|1|'.
 \item \key|S-key| means `press Shift at the same time as \key|key|'\footnotemark.
-\item \key|G-key| means `press AltGr\footnote{The right Alt key} at the same time as \key|key|'.
-\item \key|key1 key2| means `press \key|key1|, then release it, then press \key|key2|'.
-\end{itemize}
-
 \footnotetext{%
 This particular piece of notation is a bit redundant (e.g.~\keynv{S-a} is the same as \keynv{A})
   but is useful for making certain keys easier to remember:
   for instance, the cedilla is \keynv{G-<}, but is slightly easier to remember as \keynv{G-S-,} (the comma looks like a cedilla).%
 Throughout this guide, the two notations will be used interchangeably.
 }
+\item \key|G-key| means `press AltGr\footnote{The right Alt key; or the Option key, on Mac~OSX} at the same time as \key|key|'.
+\item \key|key1 key2| means `press \key|key1|, then release it, then press \key|key2|'.
+\end{itemize}
 
 For instance, \key|G-_ r| means `press AltGr+shift+\key|-| at the same time, then release them, then press \key|r|'.
 This key combination results in \out{ṟ} when used with Conkey.
