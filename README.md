@@ -26,7 +26,7 @@ The following language samples were typed using only Conkey:
 >
 > **Polish** ([source](https://en.wikipedia.org/wiki/Quotation_mark#Polish)):  
 > Mag skłonił się. […]  
-> — Jak siē nazywa ta wieś, panie? — zapytał przybysz. Kowal wzruszył ramionami.  
+> — Jak się nazywa ta wieś, panie? — zapytał przybysz. Kowal wzruszył ramionami.  
 > — Głupi Osioł.
 >
 > **Various typographical marks** (source: various Wikipedia articles)  
