@@ -847,7 +847,29 @@ Input & \multicolumn{1}{l}{Result} \\
 \bottomrule&
 \end{tabular}
 \end{minipage}\hfill
-\begin{minipage}{0.6\linewidth}
+\begin{minipage}{0.3\linewidth}
+\centering
+\caption{Box-drawing characters}
+\label{tab:box-drawing}
+\begin{tabular}{l >{\fallbackfontsymbol}l}
+\toprule
+Input & \multicolumn{1}{l}{Result} \\
+\midrule
+\key|G-m -| & ─ \\
+\key!G-m |! & │ \\
+\key|G-m [| & ┌ \\
+\key|G-m ]| & ┐ \\
+\key|G-m \| & └ \\
+\key|G-m /| & ┘ \\
+\key|G-m +| & ┼ \\
+\key|G-m <| & ┤ \\
+\key|G-m >| & ├ \\
+\key|G-m T| & ┬ \\
+\key|G-m _| & ┴ \\
+\bottomrule
+\end{tabular}
+\end{minipage}\hfill
+\begin{minipage}{0.5\linewidth}
 \centering
 \caption{Mathematical and related symbols}
 \label{tab:math}
@@ -894,6 +916,13 @@ Arrows are arranged in a roughly mnemonic way around the keyboard:
   for instance, the most common arrows \out{↑}, \out{←}, \out{↓} and~\out{→}
   are produced by typing \key|G-/ w|, \key|G-/ a|, \key|G-/ s| and \key|G-/ d| respectively.
 The full list of key sequences can be found in Table~\ref{tab:arrows}.
+
+\subsection{Box-drawing characters}
+\label{sec:box-drawing_characters}
+
+Common box-drawing characters are accessible through key sequences starting with \key|G-m|.
+The full list of key sequences is given in Table~\ref{tab:box-drawing}.
+
 
 \subsection{Mathematical and related symbols}
 \label{sec:mathematical_and_related_symbols}
