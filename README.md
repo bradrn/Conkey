@@ -24,6 +24,15 @@ The following language samples were typed using only Conkey:
 > **Zhuang** 1957 alphabet ([source](https://www.omniglot.com/writing/zhuang.htm)):
 > Bouч bouч ma dəŋƨ laзƃɯn couƅ miƨ cɯyouƨ, cinƅyenƨ cəuƽ genƨli bouчbouч giŋƨdəŋз.
 >
+> **Dan** Liberian alphabet ([source](http://std.dkuug.dk/jtc1/SC2/WG2/docs/n3481.pdf)):
+> … Yi Dɛn aaꞵi, ɥ́ gɥ́ lɵ́ gbée pə saalɵɛ … Ƃi, ɥ zòɔpúú-mɛ̀nùa Kín káɛ, ɥ wɔkɔ̀ …
+>
+> **Ik** linguistic orthography (source: Schrock 2014):
+> Kɔnɔ kaɪnɪ́ɛ́ nɔɔ iánée Máyɛ́ɛ Ɗiwᵃ, mɪta noo kíʝá ɔtáɪ́, enese ɛ́ba arútétikᵉ.
+>
+> **Chukchi** (source: Dunn 1999):
+> Cawcəwatˀm ewət ŋˀocˀəqaɣte enaralˀət. Cakəɣetˀm ətlenjuqej nəppəluqin. Naqam ŋˀocˀəqaɣte ənpənacɣəqaɣte ətlˀat.
+>
 > **Polish** ([source](https://en.wikipedia.org/wiki/Quotation_mark#Polish)):  
 > Mag skłonił się. […]  
 > — Jak się nazywa ta wieś, panie? — zapytał przybysz. Kowal wzruszył ramionami.  
