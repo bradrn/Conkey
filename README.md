@@ -92,13 +92,20 @@ Install by unzipping `installer.zip` and running the `setup.exe` file within.
 If you already have a previous version of Conkey installed,
   it may be a good idea to uninstall that first using the Control Panel.
 
-### Linux (M17N)
+### Linux
+
+Conkey is available on Linux as both an [m17n](https://www.nongnu.org/m17n/) keyboard and an [XCompose](https://wiki.debian.org/XCompose) file.
+The former is best-supported, but somewhat more difficult to install and may not work on all systems;
+  the latter should work more reliably, but may be slightly restricted in how it can be used.
+I recommend trying to install the m17n version first, then using the XCompose file if that doesn’t work.
+
+#### m17n
 
 (Special thanks go to all the members of the [ZBB board](https://www.verduria.org/) for all their help in getting this version to work!
 I don’t think I could have ported Conkey to Linux without your help.)
 
-Conkey for Linux is distributed as a `.mim` file, for use with the M17N library.
-
+It is probably easiest to use the m17n keyboard together with the [IBus](https://github.com/ibus/ibus) input method framework,
+  which supports m17n via its `ibus-m17n` input method.
 The following installation instructions have been tested with Ubuntu:
 
 1. Run `sudo apt install ibus-m17n` to install IBus and M17N.
@@ -106,6 +113,33 @@ The following installation instructions have been tested with Ubuntu:
 3. Download `latn-conk.mim` from the releases page, and copy it to `~/.m17n.d`. (You will need to delete the previous version of Conkey if it is already installed.)
 4. Run `ibus restart`. You may also need to log out and back in, or reboot, particularly if you already have a previous version of Conkey installed.
 5. The new Conkey keyboard should now be available from the Settings page (under the `Other` language).
+
+#### XCompose
+
+Due to the nature of XCompose this input method has some peculiarities compared to the others.
+In particular, it is distributed in two separate forms.
+One (`.XCompose-modifiers`) uses the modifier key AltGr, just like the other versions of Conkey.
+Unfortunately this does not always work:
+  though Compose(5) suggests that XCompose should accept modifier keys without any problems,
+  this fails to work on my machine ([and reportedly others](https://unix.stackexchange.com/questions/207067/modifier-keys-in-compose-sequence#comment1239515_343370)).
+Thus, another version (`.XCompose-multikey`) is provided in which AltGr is replaced by the [compose key](https://en.wikipedia.org/wiki/Compose_key).
+As long as the compose key is set to the right Alt key, this should for the most part behave similarly to the other versions of Conkey.
+However, some differences can be observed, most prominently:
+
+- Unlike AltGr, the compose key does not need to be held at the same time as the other keys: it may be released before the next key is pressed
+- In key sequences containing two consecutive instances of AltGr (e.g. `G-' G-a` for ‘ǽ’, or `G-\ G-j` for ‘ƛ’),
+  the compose key must be released and then pressed again before the second key
+- Key sequences containing `S-SPC`, i.e. shift and space keys pressed at the same time, are not supported — though as of the time of writing Conkey does not use these sequences anyway
+
+I thus recommend trying `.XCompose-modifiers` first, then trying `.XCompose-multikey` if the former makes things impossible to type.
+
+The following installation instructions have been tested with NixOS:
+
+1. Download `.XCompose-modifiers` or `.XCompose-multikey` from the releases page, and copy it to `~/.XCompose`.
+2. If `.XCompose-multikey` is used, set the compose key to right Alt (or any other key of your choosing) by setting XKB option `compose:ralt` (e.g. in `service.xserver.xkbOptions` for NixOS)
+3. Log out and then in to enable the new keybindings
+
+For more on customising XKB, please refer to e.g. <https://wiki.archlinux.org/title/Xorg/Keyboard_configuration>.
 
 ### Mac OSX
 
@@ -134,28 +168,34 @@ To build the keyboard, use the `Project → Build DLL and Setup Package` menu it
 (Note that I find I have to uninstall Conkey before I can run this, since otherwise I get an error.)
 This should create a `setup.exe` executable plus a number of other files.
 
-### Linux (M17N)
+### Linux
 
-Conkey can be used on Linux utilising the M17N library.
-A `.mim` file for use with this library can be generated
-  using the `ms2mim` program, included with this repository.
+### `ms2mim`
 
-The [Haskell Stack](https://docs.haskellstack.org/en/stable/README/) is recommended for building `ms2mim`.
-The following commands can be used to build it:
+The `ms2mim` utility, included in this repository, is used to build keyboards for Linux and Mac OSX.
+To build this utility, first install Haskell, preferentially using [GHCup](https://www.haskell.org/ghcup/).
+Then change to the correct directory with `cd ms2mim`, and build the utility with `cabal build`.
 
-```
-$ cd ms2mim
-$ stack build
-```
+#### m17n
 
-After it has been built the following command may then be used to generate a `latn-conk.mim` file
+After building `ms2mim`, the following command may then be used to generate a `latn-conk.mim` file
   in the current directory:
 
 ```
-$ stack exec -- ms2mim ../Conkey.klc latn-conk.mim --mim
+$ cabal exec -- ms2mim ../Conkey.klc latn-conk.mim --mim
 ```
 
 This file may then be installed as per the instructions above.
+
+#### XCompose
+
+After building `ms2mim`, the following commands may be used
+  to generate `.XCompose-modifiers` and `.XCompose-multikey` files respectively:
+
+```
+$ cabal exec -- ms2mim ../Conkey.klc ~/.XCompose-modifiers --xc --filter
+$ cabal exec -- ms2mim ../Conkey.klc ~/.XCompose-multikey --xc --filter --multikey
+```
 
 ### Mac OSX
 
