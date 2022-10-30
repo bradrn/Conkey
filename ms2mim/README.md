@@ -8,14 +8,23 @@ Currently, it can convert to `mim` files (for use with M17N),
 Usage is as follows:
 
 ```
-$ ms2mim path-to-msklc-file.klc path-to-output-file [--mim|--int] [--osx]
+$ ms2mim path-to-msklc-file.klc path-to-output-file [--mim|--xc|--int] [--osx] [--filter] [--multikey]
 ```
 
-Where:
+The format may be selected as follows:
 
 - `--mim` specifies the output format as an M17N file;
-- `--int` specifies the output format as an intermediate file;
-- `--int` and `--osx` together specify the output format as an intermediate file, altered slightly for OSX.
+- `--xc` specifies the output format as an XCompose file; and
+- `--int` specifies the output format as an intermediate file.
+
+If the format is `--xc`, the following mode options apply:
+
+- `--filter` omits single-event bindings (like `<a> : "a"`)
+- `--multikey` replaces modifier `Alt` with the `<Multi_key>`, and filters out bindings with any other modifiers
+
+If the format is `--int`, the following mode option applies:
+
+- `--osx` alters the output slightly for OSX (see below)
 
 If you forget an argument, or put them in the wrong order, `ms2mim` will most probably crash.
 (I said it was small, not well-written!)
