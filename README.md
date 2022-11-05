@@ -4,7 +4,7 @@ Conkey is a keyboard layout aimed at conlangers.
 As such, it focuses extensively on unusual diacritics and letters, aiming to cover more of these than any other keyboard.
 Conkey also contains a large amount of typographical symbols.
 
-For documentation, see `Documentation.pdf`, from the [latest release](https://github.com/bradrn/Conkey/releases/latest).
+For documentation, see [`Documentation.md`](https://github.com/bradrn/Conkey/blob/master/Documentation.md).
 
 For intallation instructions, see https://github.com/bradrn/Conkey#installation.
 
