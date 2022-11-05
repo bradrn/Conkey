@@ -170,7 +170,7 @@ This should create a `setup.exe` executable plus a number of other files.
 
 ### Linux
 
-### `ms2mim`
+#### `ms2mim`
 
 The `ms2mim` utility, included in this repository, is used to build keyboards for Linux and Mac OSX.
 To build this utility, first install Haskell, preferentially using [GHCup](https://www.haskell.org/ghcup/).
