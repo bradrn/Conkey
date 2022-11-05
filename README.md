@@ -73,11 +73,7 @@ Conkey uses the [Microsoft Keyboard Layout Creator](https://support.microsoft.co
 This is highly recommended for any complex work on Conkey.
 However, if you want to make simple modifications only, the [keyboard layout description file](Conkey.klc) has a fairly simple plaintext format which can easily be modified.
 
-A version for Linux is available. A Mac OSX version is not planned;
-  however, anyone interested is welcome to try porting Conkey to Mac OSX.
-
-**There is now a Mac OSX version!** Build and install it using the instructions below.
-
+Conkey is available in versions for both Linux and Mac OSX.
 If you are interested, ports of Conkey to other platforms would be welcomed;
   refer to the instructions [here](https://github.com/bradrn/Conkey/blob/master/ms2mim/README.md) for details.
 
