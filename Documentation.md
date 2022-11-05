@@ -40,7 +40,7 @@ When using key sequences to input letters, one important detail to be aware of i
 To capitalise a letter produced by a key sequence, the Shift key should be held down during the last key in the sequence only.
 For instance, the lowercase letter ‘ƣ’ is produced by the key sequence `G-f g`,
   while the capital letter ‘Ƣ’ is produced by the key sequence `G-f G` (rather than, say, `G-F g` or `G-F G`).
-Similarly, ‘ɗ’ is produced by `G-{ G-d`, while its capitalised counterpart ‘Ɗ’ is produced by `G-{ G-D`.
+Similarly, ‘ɖ’ is produced by `G-{ G-d`, while its capitalised counterpart ‘Ɖ’ is produced by `G-{ G-D`.
 (However, not all letters have an uppercase form; see below for details.)
 
 Note that dead keys only work before a restricted set of keys.
@@ -212,8 +212,8 @@ Hooks are produced via the `G-{` dead key, which can produce the following lette
 |:------|:-------|:-----------|
 | `b`   | ɓ      | ✔          |
 | `c`   | ƈ      | ✔          |
-| `d`   | ɖ      | ✔          |
-| `G-d` | ɗ      | ✔          |
+| `d`   | ɗ      | ✔          |
+| `G-d` | ɖ      | ✔          |
 | `f`   | ƒ      | ✔          |
 | `g`   | ɠ      | ✔          |
 | `h`   | ɦ      | ✔          |
