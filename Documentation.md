@@ -619,10 +619,10 @@ Common box-drawing characters are accessible through key sequences starting with
 | Input     | Result |
 |:----------|:----|
 | `G-m -`   | ─   |
-| `G-m |`   | │   |
+| `G-m \|`  | │   |
 | `G-m [`   | ┌   |
 | `G-m ]`   | ┐   |
-| `G-m \`\| | └   |
+| `G-m \`   | └   |
 | `G-m /`   | ┘   |
 | `G-m +`   | ┼   |
 | `G-m <`   | ┤   |
