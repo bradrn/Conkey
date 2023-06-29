@@ -90,52 +90,57 @@ If you already have a previous version of Conkey installed,
 
 ### Linux
 
-Conkey is available on Linux as both an [m17n](https://www.nongnu.org/m17n/) keyboard and an [XCompose](https://wiki.debian.org/XCompose) file.
-The former is best-supported, but somewhat more difficult to install and may not work on all systems;
-  the latter should work more reliably, but may be slightly restricted in how it can be used.
-I recommend trying to install the m17n version first, then using the XCompose file if that doesn’t work.
+Installing Conkey on Linux requires several different components to be configured correctly:
 
-#### m17n
+- [**XKB**](https://en.wikipedia.org/wiki/X_keyboard_extension)
+    manages the mapping between the physical keys on your keyboard and the keycodes received by your computer.
+  Conkey requires this mapping to be set up so that you can use a key as the ‘AltGr’ modifier — also known as the ‘Level 3 Shift’ in XKB parlance.
+- An **input method** (IM) provides the means to input letters, numbers and other characters.
+  A number of these exist: I recommend [IBus](https://en.wikipedia.org/wiki/Intelligent_Input_Bus),
+    but Conkey has also been tested with [Fcitx 5](https://fcitx-im.org/wiki/Fcitx_5) (which seems to work better on Wayland).
+- The IM requires an **input method engine** (IME) to process individual keyboard layouts.
+  Conkey requires [`m17n`](https://www.nongnu.org/m17n/) as its IME.
+- Finally, your **desktop environment** (GNOME, KDE, Xfce, etc.) needs to autostart the IM on login so that it can interpret your typing.
 
-(Special thanks go to all the members of the [ZBB board](https://www.verduria.org/) for all their help in getting this version to work!
-I don’t think I could have ported Conkey to Linux without your help.)
+Naturally, the exact configuration will differ depending on how your system is set up.
+The following guidelines should work for most systems:
 
-It is probably easiest to use the m17n keyboard together with the [IBus](https://github.com/ibus/ibus) input method framework,
-  which supports m17n via its `ibus-m17n` input method.
-The following installation instructions have been tested with Ubuntu:
+- First, remap a key on your keyboard to act as a modifier ‘AltGr’.
+  (The usual choice for this is the right Alt key.)
+  On most desktop environments, this can be configured in the settings, in a section named ‘Keyboard’ or similar.
 
-1. Run `sudo apt install ibus-m17n` to install IBus and M17N.
-2. Make a new directory `~/.m17n.d` with `mkdir ~/.m17n.d`, if it does not already exist.
-3. Download `latn-conk.mim` from the releases page, and copy it to `~/.m17n.d`. (You will need to delete the previous version of Conkey if it is already installed.)
-4. Run `ibus restart`. You may also need to log out and back in, or reboot, particularly if you already have a previous version of Conkey installed.
-5. The new Conkey keyboard should now be available from the Settings page (under the `Other` language).
+  Otherwise, you can set an XKB option such as `lv3:ralt_switch`,
+    either by running a command such as `setxkbmap -option lv3:ralt-switch` or by using a [configuration file](https://wiki.archlinux.org/title/Xorg/Keyboard_configuration#Using_X_configuration_files).
+  (At least on my machine, the possible XKB options are listed in `/usr/share/X11/xkb/rules/base.lst`).
+  Other possibilities are to use [`xmodmap`](https://wiki.archlinux.org/title/Xmodmap),
+    or to [make a custom keyboard layout](https://wiki.archlinux.org/title/X_keyboard_extension#Editing_the_layout)
+    with a key mapped to `ISO_Level3_Shift`.
 
-#### XCompose
+  Note: remapping a key to AltGr means that it will no longer work in its previous function!
+  This is why Right Alt is often a good choice — few programs require an Right Alt key specifically.
 
-Due to the nature of XCompose this input method has some peculiarities compared to the others.
-In particular, it is distributed in two separate forms.
-One (`.XCompose-modifiers`) uses the modifier key AltGr, just like the other versions of Conkey.
-Unfortunately this does not always work:
-  though Compose(5) suggests that XCompose should accept modifier keys without any problems,
-  this fails to work on my machine ([and reportedly others](https://unix.stackexchange.com/questions/207067/modifier-keys-in-compose-sequence#comment1239515_343370)).
-Thus, another version (`.XCompose-multikey`) is provided in which AltGr is replaced by the [compose key](https://en.wikipedia.org/wiki/Compose_key).
-As long as the compose key is set to the right Alt key, this should for the most part behave similarly to the other versions of Conkey.
-However, some differences can be observed, most prominently:
+- Next, install an IM.
+  If you’re using GNOME you might already have IBus installed.
+  If not, installing IBus or Fcitx 5 should be straightforward:
+    for details, consult the instructions for your distribution.
+  (e.g. on Arch Linux, to install IBus use `pacman -S ibus` and set the [appropriate environment variables](https://wiki.archlinux.org/title/IBus#Integration).)
+  You will also need to install `m17n` integration — usually this is in a package called `ibus-m17n`, `fcitx5-m17n` or similar.
 
-- Unlike AltGr, the compose key does not need to be held at the same time as the other keys: it may be released before the next key is pressed
-- In key sequences containing two consecutive instances of AltGr (e.g. `G-' G-a` for ‘ǽ’, or `G-\ G-j` for ‘ƛ’),
-  the compose key must be released and then pressed again before the second key
-- Key sequences containing `S-SPC`, i.e. shift and space keys pressed at the same time, are not supported — though as of the time of writing Conkey does not use these sequences anyway
+- Ensure that your desktop environment launches the IM on login.
+  GNOME may do this automatically;
+    otherwise set up a command such as `ibus-daemon -drxR` or `fcitx5 -rd` to be run on login.
 
-I thus recommend trying `.XCompose-modifiers` first, then trying `.XCompose-multikey` if the former makes things impossible to type.
+- Get the Conkey keyboard layout by downloading `latn-conk.mim` from [the latest release](https://github.com/bradrn/Conkey/releases/tag/v5.0.0).
+  Create a directory called `.m17n.d` in your home directory (if it does not already exist), and place `latn-conk.mim` in it.
 
-The following installation instructions have been tested with NixOS:
+- Finally, log out and back in.
+  It should now be possible to add Conkey as a keyboard layout in the IM settings.
+  You can use the AltGr key you set up earlier to input diacritics, letters and symbols.
 
-1. Download `.XCompose-modifiers` or `.XCompose-multikey` from the releases page, and copy it to `~/.XCompose`.
-2. If `.XCompose-multikey` is used, set the compose key to right Alt (or any other key of your choosing) by setting XKB option `compose:ralt` (e.g. in `service.xserver.xkbOptions` for NixOS)
-3. Log out and then in to enable the new keybindings
+  Note: on IBus, for AltGr to work, you may need to select ‘Use system keyboard layout’ (in the ‘Advanced’ tab of the preferences).
+  The equivalent setting on Fcitx5 should be enabled by default.
 
-For more on customising XKB, please refer to e.g. <https://wiki.archlinux.org/title/Xorg/Keyboard_configuration>.
+If the above instructions do not work, then you can also try the XCompose file mentioned [below](https://github.com/bradrn/Conkey#xcompose).
 
 ### Mac OSX
 
@@ -154,6 +159,24 @@ Or you can make it permanently visible by entering `chflags nohidden ~/Library` 
 If the `~/Library` folder does not already contain a “Keyboard Layouts” folder, just create it.
 
 It should also work if you put the `.bundle` directory in `/System/Library`.
+
+### XCompose
+
+Some platforms provide a [compose key](https://en.wikipedia.org/wiki/Compose_key) to convert key sequences into alternate characters.
+Though this does not provide a full ‘keyboard layout’ *per se*, Conkey has been adapted to work with XCompose,
+  with the ‘compose key’ / ‘multi key’ taking the place of AltGr.
+
+The following installation instructions should work for Linux:
+
+1. Download the XCompose file from [the latest release](https://github.com/bradrn/Conkey/releases/tag/v5.0.0);
+     rename it to `.XCompose` and move it into your home directory.
+2. Enable the compose key, e.g. in the ‘Keyboard’ settings of your desktop environment, or by setting XKB option `compose:ralt`.
+   (See the Linux section above for more on this).
+3. Log out and then in to enable the new keybindings.
+
+The same `.XCompose` file should also be compatible with [WinCompose](https://github.com/SamHocevar/wincompose) for Windows.
+However, I have not tested this.
+Follow the instructions in the linked documentation to install Conkey using this method.
 
 ## Building
 
