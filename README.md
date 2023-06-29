@@ -112,9 +112,10 @@ The following guidelines should work for most systems:
   Otherwise, you can set an XKB option such as `lv3:ralt_switch`,
     either by running a command such as `setxkbmap -option lv3:ralt-switch` or by using a [configuration file](https://wiki.archlinux.org/title/Xorg/Keyboard_configuration#Using_X_configuration_files).
   (At least on my machine, the possible XKB options are listed in `/usr/share/X11/xkb/rules/base.lst`).
-  Other possibilities are to use [`xmodmap`](https://wiki.archlinux.org/title/Xmodmap),
-    or to [make a custom keyboard layout](https://wiki.archlinux.org/title/X_keyboard_extension#Editing_the_layout)
-    with a key mapped to `ISO_Level3_Shift`.
+  Other possibilities are to [make a custom keyboard layout](https://wiki.archlinux.org/title/X_keyboard_extension#Editing_the_layout)
+    with a key mapped to `ISO_Level3_Shift`,
+    or to use [`xmodmap`](https://wiki.archlinux.org/title/Xmodmap)
+      (e.g. to remap right-Alt to AltGr, run `xmodmap -e 'keycode 108 = ISO_Level3_Shift ISO_Level3_Shift ISO_Level3_Shift ISO_Level3_Shift'`).
 
   Note: remapping a key to AltGr means that it will no longer work in its previous function!
   This is why Right Alt is often a good choice — few programs require an Right Alt key specifically.
