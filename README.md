@@ -58,12 +58,13 @@ The following language samples were typed using only Conkey:
 
 Conkey is based around the following design principles:
 
-- It is based on a **US keyboard layout**.
-  (A UK version is not planned, but I am more than happy for someone else to make one if they are interested.)
-- All special characters are to be accessed using **AltGr only**. The base US layout is **inviolate**, and the **control key is left unused**.
-- **Mnemonics** to be used whenever possible. Although many characters have no obvious mnemonic, when one does exist it should be used.
-- Conkey supports **only Latin scripts** (not including the IPA).
-  Characters from other scripts should only be added if they have been used at some point in a Latin-based script.
+- Conkey extends the **US keyboard layout**.
+  It does not change or swap any part of this base layout.
+  (Versions based on UK, Dvorak, Colemak etc. layouts are not planned, but I would be more than happy for someone else to make one if they are interested.)
+- All special characters use the [**AltGr**](https://en.wikipedia.org/wiki/AltGr_key) modifier key for access, and no other key.
+- **Mnemonic** key sequences should be preferred when possible.
+- Conkey supports **primarily Latin scripts**.
+  Characters from other scripts should only be added if they have been used at some point alongside a Latin-based script.
 
 Any future development should conform to these principles.
 
@@ -90,32 +91,42 @@ If you already have a previous version of Conkey installed,
 
 ### Linux
 
-Installing Conkey on Linux requires several different components to be configured correctly:
+Keyboard input on Linux requires several components to work together:
 
 - [**XKB**](https://en.wikipedia.org/wiki/X_keyboard_extension)
     manages the mapping between the physical keys on your keyboard and the keycodes received by your computer.
-  Conkey requires this mapping to be set up so that you can use a key as the ‘AltGr’ modifier — also known as the ‘Level 3 Shift’ in XKB parlance.
 - An **input method** (IM) provides the means to input letters, numbers and other characters.
-  A number of these exist: I recommend [IBus](https://en.wikipedia.org/wiki/Intelligent_Input_Bus),
-    but Conkey has also been tested with [Fcitx 5](https://fcitx-im.org/wiki/Fcitx_5) (which seems to work better on Wayland).
 - The IM requires an **input method engine** (IME) to process individual keyboard layouts.
-  Conkey requires [`m17n`](https://www.nongnu.org/m17n/) as its IME.
 - Finally, your **desktop environment** (GNOME, KDE, Xfce, etc.) needs to autostart the IM on login so that it can interpret your typing.
+
+  <!-- A number of these exist: I recommend [IBus](https://en.wikipedia.org/wiki/Intelligent_Input_Bus), -->
+  <!--   but Conkey has also been tested with [Fcitx 5](https://fcitx-im.org/wiki/Fcitx_5) (which seems to work better on Wayland). -->
+  <!-- Conkey requires [`m17n`](https://www.nongnu.org/m17n/) as its IME. -->
 
 Naturally, the exact configuration will differ depending on how your system is set up.
 The following guidelines should work for most systems:
 
-- First, remap a key on your keyboard to act as a modifier ‘AltGr’.
-  (The usual choice for this is the right Alt key.)
-  On most desktop environments, this can be configured in the settings, in a section named ‘Keyboard’ or similar.
+- As with many Linux keyboard layouts, Conkey requires a specialised [AltGr modifier key](https://en.wikipedia.org/wiki/AltGr_key).
+  You will also see this called the ‘Level 3 Shift’ or ‘3rd level modifier’ by XKB.
+  However, most modern keyboards lack this key,
+    so you will need to change the XKB settings so that a physical key on your keyboard behaves as AltGr instead.
 
-  Otherwise, you can set an XKB option such as `lv3:ralt_switch`,
-    either by running a command such as `setxkbmap -option lv3:ralt-switch` or by using a [configuration file](https://wiki.archlinux.org/title/Xorg/Keyboard_configuration#Using_X_configuration_files).
-  (At least on my machine, the possible XKB options are listed in `/usr/share/X11/xkb/rules/base.lst`).
-  Other possibilities are to [make a custom keyboard layout](https://wiki.archlinux.org/title/X_keyboard_extension#Editing_the_layout)
-    with a key mapped to `ISO_Level3_Shift`,
-    or to use [`xmodmap`](https://wiki.archlinux.org/title/Xmodmap)
-      (e.g. to remap right-Alt to AltGr, run `xmodmap -e 'keycode 108 = ISO_Level3_Shift ISO_Level3_Shift ISO_Level3_Shift ISO_Level3_Shift'`).
+  Many desktop environments allow this to be configured in the settings.
+  Usually this is in a section named ‘Keyboard’ or similar.
+  On KDE, the setting should be in ‘Input Devices → Keyboard → Advanced → Key to choose the 3rd level’.
+  On GNOME, install [Tweaks](https://wiki.gnome.org/Apps/Tweaks)
+    and then set ‘Keyboard & Mouse → Additional Layout Options → Key to choose the 3rd level’ within the tweaks tool.
+  On Xfce, try ‘Keyboard → Advanced → Change layout option’ (making sure to uncheck ‘Use system defaults’).
+
+  Otherwise, you can try one of the following methods:
+  - XKB configuration options such as `lv3:ralt_switch` can be set directly,
+      either by running a command like `setxkbmap -option lv3:ralt-switch`,
+      or by using a [configuration file](https://wiki.archlinux.org/title/Xorg/Keyboard_configuration#Using_X_configuration_files).
+    (At least on my machine, the possible XKB options are listed in `/usr/share/X11/xkb/rules/base.lst`).
+  - You can [make a custom XKB layout](https://wiki.archlinux.org/title/X_keyboard_extension#Editing_the_layout)
+      containing a key mapped to `ISO_Level3_Shift`.
+  - You can also use [`xmodmap`](https://wiki.archlinux.org/title/Xmodmap):
+      e.g. to remap right-Alt to AltGr, run `xmodmap -e 'keycode 108 = ISO_Level3_Shift ISO_Level3_Shift ISO_Level3_Shift ISO_Level3_Shift'`.
 
   Note: remapping a key to AltGr means that it will no longer work in its previous function!
   This is why Right Alt is often a good choice — few programs require an Right Alt key specifically.
@@ -128,7 +139,7 @@ The following guidelines should work for most systems:
   You will also need to install `m17n` integration — usually this is in a package called `ibus-m17n`, `fcitx5-m17n` or similar.
 
 - Ensure that your desktop environment launches the IM on login.
-  GNOME may do this automatically;
+  GNOME may do this automatically, as might KDE (though I haven’t tested the latter);
     otherwise set up a command such as `ibus-daemon -drxR` or `fcitx5 -rd` to be run on login.
 
 - Get the Conkey keyboard layout by downloading `latn-conk.mim` from [the latest release](https://github.com/bradrn/Conkey/releases/tag/v5.0.0).
