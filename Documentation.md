@@ -186,6 +186,7 @@ Like combining diacritics, modifier letters can be generated using key sequences
 | `G-] 0`       | Modifier end low tone ˼                                                            |
 | `G-] G-9`     | Modifier begin high tone ˹                                                         |
 | `G-] G-0`     | Modifier end low tone ˺                                                            |
+| `G-] G-S-,`   | Modifier cedilla ¸                                                                 |
 
 #### Diacritics spanning two letters
 
