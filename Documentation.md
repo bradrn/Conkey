@@ -702,6 +702,7 @@ The full list of key sequences is as follows:
 | `G-= :`   | ∷      |
 | `G-= *`   | ★      |
 | `G-= b`   | ⊥      |
+| `G-= t`   | ⊤      |
 | `G-= (`   | ⦇      |
 | `G-= )`   | ⦈      |
 | `G-= [`   | ⟦      |
