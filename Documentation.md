@@ -221,6 +221,8 @@ Hooks are produced via the `G-{` dead key, which can produce the following lette
 | `j`   | ʝ      | ✔          |
 | `G-j` | ᶁ      | ✘          |
 | `k`   | ƙ      | ✔          |
+| `l`   | ɭ      | ✘          |
+| `G-l` | ꞎ      | ✘          |
 | `n`   | ɲ      | ✔          |
 | `p`   | ƥ      | ✔          |
 | `q`   | ɋ      | ✔          |
