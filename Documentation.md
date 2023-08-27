@@ -675,7 +675,7 @@ The full list of key sequences is as follows:
 | `G-= =`   | ≡      | 
 | `G-= !`   | ≠      | 
 | `G-= G-!` | ≢      | 
-| `G-= G-x` | ≈      | 
+| `G-= q`   | ≈      | 
 | `G-= P`   | ∼      | 
 | `G-= <`   | ≤      | 
 | `G-= >`   | ≥      | 
