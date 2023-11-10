@@ -364,6 +364,7 @@ These letters may be accessed using one- and two-key sequences as follows:
   | `G-d n`   | ƞ      |  ✔         |
   | `G-d s`   | ʃ      |  ✔         |
   | `G-d o`   | ꝏ      |  ✔         |
+  | `G-d q`   | ɤ      |  ✘         |
   | `G-d u`   | ʊ      |  ✔         |
   | `G-d w`   | ꞷ      |  ✔         |
   | `G-d y`   | ɥ      |  ✔         |
