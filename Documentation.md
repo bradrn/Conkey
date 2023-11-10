@@ -513,6 +513,7 @@ Conkey can produce a wide variety of other punctuation marks and symbols,
 | `G-?`              | ¿                       |
 | `G-&`              | ⁊ (i.e. Tironian et)   |
 | `G-@ !`            | ‽                       |
+| `G-@ ?`            | ⸘                       |
 | `G-@ N`            | №                       |
 | `G-@ A`            | ª                       |
 | `G-@ O`            | º                       |
