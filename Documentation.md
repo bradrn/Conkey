@@ -516,6 +516,7 @@ Conkey can produce a wide variety of other punctuation marks and symbols,
 | `G-@ N`            | №                       |
 | `G-@ A`            | ª                       |
 | `G-@ O`            | º                       |
+| `G-@ p`            | ¶                       |
 | `G-@ s`            | §                       |
 | `G-@ 1`            | †                       |
 | `G-@ 2`            | ‡                       |
