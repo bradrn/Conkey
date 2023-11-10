@@ -679,6 +679,8 @@ The full list of key sequences is as follows:
 | `G-= d`   | ∂      |
 | `G-= D`   | ∇      |
 | `G-= G-p` | ☉      |
+| `` G-= ` `` | ↊    |
+| `G-= w`   | ↋      |
 | *Equality and inequality:* | |
 | `G-= =`   | ≡      | 
 | `G-= !`   | ≠      | 
