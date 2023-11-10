@@ -148,6 +148,7 @@ These can be entered using key sequences starting with `G-]`, as shown in the fo
 | `` G-] ` ``   | Grave below ◌̖                 |
 | `` G-] S-` `` | Acute below ◌̗                 |
 | `G-] [`       | Bridge below ◌̪                |
+| `G-] (`       | Inverted breve below ◌̯        |
 
 #### Modifier letters
 
