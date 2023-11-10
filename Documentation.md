@@ -97,6 +97,7 @@ These dead keys are enumerated in the following table:
 | Circumflex below ◌̭ | `G-7`     | `delntu` `DELNTU`                                 |                                                                                     |
 | Ring above ◌̊       | `G-8`     | `auwy` `AU`                                       |                                                                                     |
 | Breve ◌̆            | `G-9`     | `aegiou` `AEGIOU`                                 |                                                                                     |
+| Inverted breve ◌̑   | `G-(`     | `aeioru` `AEIORU`                                 |                                                                                     |
 | Hook above ◌̉       | `G-0`     | `aeiouy` `AEIOUY`                                 |                                                                                     |
 | Horn ◌̛             | `G-)`     | `ou` `OU`                                         |                                                                                     |
 | Macron ◌̄           | `G--`     | `aegiouy` `AEGIOUY`                               | `G-- G-a` and `G-- G-A` produce ‘ǣ’ and ‘Ǣ’ respectively.                           |
