@@ -698,6 +698,8 @@ The full list of key sequences is as follows:
 | `G-= I`   | ∩      | 
 | `G-= {`   | ⊆      | 
 | `G-= }`   | ⊇      | 
+| `G-= G-{` | ⊂      | 
+| `G-= G-}` | ⊃      | 
 | `G-= \`   | ∖      | 
 | `G-= G-q` | ℵ      | 
 | `G-= n`   | ∞      | 
