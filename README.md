@@ -221,10 +221,9 @@ This file may then be installed as per the instructions above.
 #### XCompose
 
 After building `ms2mim`, the following commands may be used
-  to generate `.XCompose-modifiers` and `.XCompose-multikey` files respectively:
+  to generate the file `.XCompose-multikey`:
 
 ```
-$ cabal exec -- ms2mim ../Conkey.klc ~/.XCompose-modifiers --xc --filter
 $ cabal exec -- ms2mim ../Conkey.klc ~/.XCompose-multikey --xc --filter --multikey
 ```
 
