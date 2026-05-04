@@ -41,7 +41,7 @@ parser = do
     let layout' = addDeadKeyMappings deadKeyMappings layout
     _ <- parseKeyNames
     _ <- parseKeyNameExts
-    _ <- parseKeyNameDeads
+    _ <- optional $ try parseKeyNameDeads
     _ <- parseDescriptions
     (_, kbdLanguageNames) <- parseLanguageNames
     _ <- symbol "ENDKBD"
@@ -64,8 +64,8 @@ symbol :: Text -> Parser Text
 symbol = L.symbol sc
 
 hexadecimal :: Parser Int
-hexadecimal = lexeme L.hexadecimal
-    
+hexadecimal = L.lexeme space1 L.hexadecimal  -- make sure there is actual space after the number
+
 quoted :: Parser Text
 quoted = label "quoted string" $ lexeme $ fmap T.pack $
     char '"' >> manyTill anySingle (char '"')
@@ -183,7 +183,7 @@ parseKeyNameExts :: Parser (Map Int Text)
 parseKeyNameExts = do
     _ <- symbol "KEYNAME_EXT"
     fmap M.fromList $ many $
-        (,) <$> hexadecimal <*> (quoted <|> spaced)
+        (,) <$> try hexadecimal <*> (quoted <|> spaced)
 
 parseKeyNameDeads :: Parser (Map Int Text)
 parseKeyNameDeads = do
