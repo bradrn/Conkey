@@ -3,7 +3,7 @@ module Main where
 import System.Environment (getArgs)
 import System.IO (openFile, hSetEncoding, utf16, IOMode(ReadMode))
 
-import qualified Data.Text.IO as TIO
+import qualified Data.Text.IO.Utf8 as TIO
 
 import qualified Convert.Intermediate as Int
 import Convert.MS2MIM (convertWithMetadata)
