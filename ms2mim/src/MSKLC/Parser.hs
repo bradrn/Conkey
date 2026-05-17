@@ -48,14 +48,11 @@ parser = do
     eof
     return $ Keyboard Metadata{..} layout'
 
-sc :: Parser ()
-sc = L.space space1 (L.skipLineComment "//" <|> L.skipLineComment ";") empty
+comment :: Parser ()
+comment = L.skipLineComment "//" <|> L.skipLineComment ";"
 
--- -- | Variant of sc, but does not accept newlines
--- sc' :: Parser ()
--- sc' = L.space space1' (L.skipLineComment "//" <|> L.skipLineComment ";") empty
---   where
---     space1' = void $ takeWhile1P (Just "white space") (\x -> isSpace x && (x /= "\n") && (x /= "\r"))
+sc :: Parser ()
+sc = L.space space1 comment empty
 
 lexeme :: Parser a -> Parser a
 lexeme = L.lexeme sc
@@ -64,7 +61,10 @@ symbol :: Text -> Parser Text
 symbol = L.symbol sc
 
 hexadecimal :: Parser Int
-hexadecimal = L.lexeme space1 L.hexadecimal  -- make sure there is actual space after the number
+hexadecimal = L.lexeme sc' L.hexadecimal
+  where
+    -- make sure there is actual space after the number
+    sc' = skipSome $ hidden space1 <|> hidden comment
 
 quoted :: Parser Text
 quoted = label "quoted string" $ lexeme $ fmap T.pack $

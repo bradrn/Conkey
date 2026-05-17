@@ -38,4 +38,5 @@ executable ms2mim
   default-language:    Haskell2010
   build-depends:       base >= 4.7 && < 5
                      , ms2mim
+                     , bytestring
                      , text >= 2.1 && < 3
